@@ -75,7 +75,7 @@ body {
 /* Hero button hotspot */
 .hero-explore-story {
   left: 10.3%;
-  top: 25.6%;
+  top: 21.6%;
   width: 31%;
   height: 4.5%;
 }
@@ -83,7 +83,7 @@ body {
 /* Email hotspot */
 .email-link {
   left: 34%;
-  top: 92.3%;
+  top: 94.3%;
   width: 33%;
   height: 3.2%;
 }
@@ -95,17 +95,17 @@ body {
   }
 
   .top-our-story {
-    left: 18%;
+    left: 20%;
     top: 0.2%;
     width: 15%;
-    height: 3.4%;
+    height: 2.4%;
   }
 
   .top-contact {
-    left: 78%;
+    left: 20%;
     top: 0.2%;
     width: 12%;
-    height: 3.4%;
+    height: 2.4%;
   }
 
   .hero-explore-story {
