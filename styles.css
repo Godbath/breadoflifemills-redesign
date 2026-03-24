@@ -1,1 +1,134 @@
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  background: #f3e2d1;
+  overflow-x: hidden;
+  font-family: Georgia, serif;
+}
+
+.mockup-page {
+  width: 100%;
+}
+
+.mockup-wrap {
+  position: relative;
+  width: min(100%, 1024px);
+  margin: 0 auto;
+}
+
+.mockup-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* General invisible clickable areas */
+.hotspot,
+.anchor-target {
+  position: absolute;
+  display: block;
+}
+
+/* Uncomment this while aligning boxes, then turn back to transparent */
+/*
+.hotspot {
+  background: rgba(255, 0, 0, 0.18);
+}
+.anchor-target {
+  background: rgba(0, 0, 255, 0.12);
+}
+*/
+
+/* Invisible scroll targets placed over the visual sections */
+.story-target {
+  left: 0;
+  top: 35.5%;
+  width: 100%;
+  height: 12%;
+}
+
+.contact-target {
+  left: 0;
+  top: 87.5%;
+  width: 100%;
+  height: 8%;
+}
+
+/* Top nav hotspots */
+.top-our-story {
+  left: 18.5%;
+  top: 0.3%;
+  width: 13%;
+  height: 3.1%;
+}
+
+.top-contact {
+  left: 78.5%;
+  top: 0.3%;
+  width: 10.5%;
+  height: 3.1%;
+}
+
+/* Hero button hotspot */
+.hero-explore-story {
+  left: 10.3%;
+  top: 25.6%;
+  width: 31%;
+  height: 4.5%;
+}
+
+/* Email hotspot */
+.email-link {
+  left: 34%;
+  top: 92.3%;
+  width: 33%;
+  height: 3.2%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 720px) {
+  .mockup-wrap {
+    width: 100%;
+  }
+
+  .top-our-story {
+    left: 18%;
+    top: 0.2%;
+    width: 15%;
+    height: 3.4%;
+  }
+
+  .top-contact {
+    left: 78%;
+    top: 0.2%;
+    width: 12%;
+    height: 3.4%;
+  }
+
+  .hero-explore-story {
+    left: 9.5%;
+    top: 25.4%;
+    width: 32%;
+    height: 4.8%;
+  }
+
+  .story-target {
+    top: 35.3%;
+    height: 12.5%;
+  }
+
+  .contact-target {
+    top: 87.3%;
+    height: 8.5%;
+  }
+
+  .email-link {
+    left: 31.5%;
+    top: 92.1%;
+    width: 37%;
+    height: 3.6%;
+  }
+}
