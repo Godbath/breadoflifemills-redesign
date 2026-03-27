@@ -169,8 +169,8 @@ body {
 @media (max-width: 720px) {
   .floating-home-button {
   position: fixed;
-  top: 15px;
-  right: 3px;
+  top: 19px;
+  right: 1px;
   width: 100px !important;
   height: auto;
   z-index: 999;
