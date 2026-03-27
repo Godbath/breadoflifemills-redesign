@@ -33,7 +33,7 @@ body {
 }
 
 /* Uncomment this while aligning boxes, then re-comment it later */
-
+/*
 .hotspot {
   background: rgba(255, 0, 0, 0.18);
 }
@@ -57,7 +57,7 @@ body {
   background: rgba(0, 255, 255, 0.35);
   outline: 2px solid cyan;
 }
-
+*/
 
 /* Invisible scroll targets placed over the visual sections */
 .story-target {
