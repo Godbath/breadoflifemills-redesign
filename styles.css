@@ -232,14 +232,17 @@ body {
 
 .subpage-wrap {
   position: relative;
-  width: min(100%, 1024px);
+  width: 100%;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
 .subpage-image {
   display: block;
   width: 100%;
+  max-width: 1024px;
   height: auto;
+  margin: 0 auto;
 }
 
 .floating-home-button {
