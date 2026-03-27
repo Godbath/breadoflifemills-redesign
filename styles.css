@@ -75,7 +75,7 @@ body {
 /* Process dropdown trigger */
 .process-menu-wrap {
   position: absolute;  
-  left: 57.5%;
+  left: 54.5%;
   top: 0.3%;
   width: 10.5%;
   height: 1.6%;
@@ -91,8 +91,8 @@ body {
 
 .process-dropdown {
   position: absolute;
-  left: 35%;
-  top: 78%;
+  left: 34%;
+  top: 64%;
   transform: translateX(-50%);
   width: 22vw;
   max-width: 420px;
@@ -118,13 +118,17 @@ body {
 }
 
 .process-method-link {
-  top: 34%;
+  top: 35%;
   height: 25%;
+  background: rgba(255, 0, 255, 0.35) !important;
+  outline: 2px solid magenta !important;
 }
 
 .process-care-link {
-  top: 59%;
+  top: 61%;
   height: 25%;
+  background: rgba(0, 255, 255, 0.35) !important;
+  outline: 2px solid cyan !important;
 }
 
 .process-menu-wrap:hover .process-dropdown,
