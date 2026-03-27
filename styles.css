@@ -169,8 +169,8 @@ body {
 @media (max-width: 720px) {
   .floating-home-button {
     top: 12px;
-    right: 24px;
-    width: 84px;
+    right: 4px;
+    width: 42px;
   }
   .mockup-wrap {
     width: 100%;
