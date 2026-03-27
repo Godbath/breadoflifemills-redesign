@@ -169,7 +169,7 @@ body {
 @media (max-width: 720px) {
   .floating-home-button {
     top: 12px;
-    right: 12px;
+    right: 24px;
     width: 84px;
   }
   .mockup-wrap {
