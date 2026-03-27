@@ -32,15 +32,32 @@ body {
   display: block;
 }
 
-/* Uncomment this while aligning boxes, then turn back to transparent */
-
+/* Uncomment this while aligning boxes, then re-comment it later */
+/*
 .hotspot {
   background: rgba(255, 0, 0, 0.18);
 }
 .anchor-target {
   background: rgba(0, 0, 255, 0.12);
 }
-
+.process-menu-wrap {
+  background: rgba(255, 165, 0, 0.25);
+  outline: 2px solid orange;
+}
+.process-dropdown {
+  display: block !important;
+  background: rgba(0, 0, 255, 0.08);
+  outline: 2px solid blue;
+}
+.process-method-link {
+  background: rgba(255, 0, 255, 0.35);
+  outline: 2px solid magenta;
+}
+.process-care-link {
+  background: rgba(0, 255, 255, 0.35);
+  outline: 2px solid cyan;
+}
+*/
 
 /* Invisible scroll targets placed over the visual sections */
 .story-target {
@@ -74,8 +91,8 @@ body {
 
 /* Process dropdown trigger */
 .process-menu-wrap {
-  position: absolute;  
-  left: 54.5%;
+  position: absolute;
+  left: 63.8%;
   top: 0.3%;
   width: 10.5%;
   height: 1.6%;
@@ -91,12 +108,12 @@ body {
 
 .process-dropdown {
   position: absolute;
-  left: 39%;
-  top: 38%;
+  left: 50%;
+  top: 8%;
   transform: translateX(-50%);
-  width: 22vw;
-  max-width: 420px;
-  min-width: 260px;
+  width: 20vw;
+  max-width: 340px;
+  min-width: 220px;
   display: none;
   z-index: 70;
 }
@@ -111,24 +128,20 @@ body {
 
 .process-dropdown-link {
   position: absolute;
-  left: 0;
-  width: 33%;
+  left: 34%;
+  width: 32%;
   display: block;
   z-index: 80;
 }
 
 .process-method-link {
   top: 46%;
-  height: 10%;
-  background: rgba(255, 0, 255, 0.35) !important;
-  outline: 2px solid magenta !important;
+  height: 12%;
 }
 
 .process-care-link {
   top: 67%;
-  height: 10%;
-  background: rgba(0, 255, 255, 0.35) !important;
-  outline: 2px solid cyan !important;
+  height: 12%;
 }
 
 .process-menu-wrap:hover .process-dropdown,
@@ -173,26 +186,33 @@ body {
   }
 
   .process-menu-wrap {
-    left: 65.5%;
+    left: 63.5%;
     top: 0.2%;
-    width: 12%;
+    width: 13%;
     height: 2.4%;
   }
 
   .process-dropdown {
-    width: 42vw;
-    min-width: 180px;
-    max-width: 280px;
+    left: 50%;
+    top: 10%;
+    width: 34vw;
+    max-width: 260px;
+    min-width: 170px;
+  }
+
+  .process-dropdown-link {
+    left: 34%;
+    width: 32%;
   }
 
   .process-method-link {
-    top: 34%;
-    height: 25%;
+    top: 46%;
+    height: 13%;
   }
 
   .process-care-link {
-    top: 59%;
-    height: 25%;
+    top: 67%;
+    height: 13%;
   }
 
   .hero-explore-story {
@@ -219,6 +239,8 @@ body {
     height: 3.2%;
   }
 }
+
+/* Subpages */
 .subpage-body {
   margin: 0;
   background: #f3e2d1;
@@ -232,17 +254,14 @@ body {
 
 .subpage-wrap {
   position: relative;
-  width: 100%;
-  max-width: 1024px;
+  width: min(100%, 1024px);
   margin: 0 auto;
 }
 
 .subpage-image {
   display: block;
   width: 100%;
-  max-width: 1024px;
   height: auto;
-  margin: 0 auto;
 }
 
 .floating-home-button {
