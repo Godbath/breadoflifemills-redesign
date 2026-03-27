@@ -280,10 +280,10 @@ body {
 
 .floating-home-button {
   position: fixed;
-  top: 0px;
+  top: 3px;
   right: 10px;
   display: block;
-  width: 210px;
+  width: 208px;
   height: auto;
   text-decoration: none;
   z-index: 999;
