@@ -33,14 +33,14 @@ body {
 }
 
 /* Uncomment this while aligning boxes, then turn back to transparent */
-/*
+
 .hotspot {
   background: rgba(255, 0, 0, 0.18);
 }
 .anchor-target {
   background: rgba(0, 0, 255, 0.12);
 }
-*/
+
 
 /* Invisible scroll targets placed over the visual sections */
 .story-target {
