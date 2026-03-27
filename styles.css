@@ -168,10 +168,19 @@ body {
 /* Mobile adjustments */
 @media (max-width: 720px) {
   .floating-home-button {
-    top: 12px;
-    right: 4px;
-    width: 42px;
-  }
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  width: 28px !important;
+  height: auto;
+  z-index: 999;
+}
+
+.floating-home-button-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
   .mockup-wrap {
     width: 100%;
   }
