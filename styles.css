@@ -15,8 +15,8 @@ body {
 
 .mockup-wrap {
   position: relative;
-  width: min(100%, 1024px);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .mockup-image {
@@ -254,8 +254,8 @@ body {
 
 .subpage-wrap {
   position: relative;
-  width: min(100%, 1024px);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .subpage-image {
