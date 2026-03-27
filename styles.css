@@ -74,8 +74,8 @@ body {
 
 /* Process dropdown trigger */
 .process-menu-wrap {
-  position: absolute;
-  left: 65.5%;
+  position: absolute;  
+  left: 60.5%;
   top: 0.3%;
   width: 10.5%;
   height: 1.6%;
@@ -91,8 +91,8 @@ body {
 
 .process-dropdown {
   position: absolute;
-  left: 50%;
-  top: 100%;
+  left: 38%;
+  top: 82%;
   transform: translateX(-50%);
   width: 22vw;
   max-width: 420px;
