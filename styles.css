@@ -91,8 +91,8 @@ body {
 
 .process-dropdown {
   position: absolute;
-  left: 35%;
-  top: 55%;
+  left: 39%;
+  top: 38%;
   transform: translateX(-50%);
   width: 22vw;
   max-width: 420px;
@@ -112,21 +112,21 @@ body {
 .process-dropdown-link {
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 33%;
   display: block;
   z-index: 80;
 }
 
 .process-method-link {
-  top: 42%;
-  height: 15%;
+  top: 46%;
+  height: 10%;
   background: rgba(255, 0, 255, 0.35) !important;
   outline: 2px solid magenta !important;
 }
 
 .process-care-link {
-  top: 64%;
-  height: 15%;
+  top: 67%;
+  height: 10%;
   background: rgba(0, 255, 255, 0.35) !important;
   outline: 2px solid cyan !important;
 }
