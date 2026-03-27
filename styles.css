@@ -108,7 +108,7 @@ body {
 
 .process-dropdown {
   position: absolute;
-  left: 44%;
+  left: 48%;
   top: 2%;
   transform: translateX(-50%);
   width: 20vw;
@@ -135,12 +135,12 @@ body {
 }
 
 .process-method-link {
-  top: 48%;
+  top: 51%;
   height: 10%;
 }
 
 .process-care-link {
-  top: 67%;
+  top: 69%;
   height: 11%;
 }
 
