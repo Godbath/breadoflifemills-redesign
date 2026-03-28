@@ -157,6 +157,23 @@ body {
   height: 2.5%;
 }
 
+.floating-home-button {
+  position: fixed;
+  top: 3px;
+  right: 10px;
+  display: block;
+  width: 208px;
+  height: auto;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.floating-home-button-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Email hotspot */
 .email-link {
   left: 34%;
@@ -273,23 +290,6 @@ body {
 }
 
 .subpage-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.floating-home-button {
-  position: fixed;
-  top: 3px;
-  right: 10px;
-  display: block;
-  width: 208px;
-  height: auto;
-  text-decoration: none;
-  z-index: 999;
-}
-
-.floating-home-button-image {
   display: block;
   width: 100%;
   height: auto;
