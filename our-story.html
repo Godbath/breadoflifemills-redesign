@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Story | Bread of Life Mills</title>
 
-  <!-- Shared styles (for floating home button) -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Cormorant Garamond font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ORIGINAL FONT (disabled for easy rollback)
@@ -33,6 +31,7 @@
       color: #5a3f2a;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
 
@@ -57,17 +56,18 @@
     }
 
     h1 {
-      margin: 0px 0 8px 0;
+      margin: 0 0 8px 0;
       text-align: center;
       font-size: 45px;
       font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     p {
       font-size: 23px;
       line-height: 1.7;
       margin-bottom: 24px;
-      font-weight: 600; /* IMPORTANT: lighter body text for this font */
+      font-weight: 600;
     }
 
     @media (max-width: 768px) {
@@ -156,7 +156,6 @@
     </p>
   </div>
 
-  <!-- Floating Home Button -->
   <a
     href="index.html"
     class="floating-home-button"
