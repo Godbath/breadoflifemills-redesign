@@ -23,6 +23,7 @@
       font-family: 'DejaVu Serif', serif;
       font-weight: 400;
       color: #3b2a1a;
+      overflow-x: hidden;
     }
 
     .page-content {
@@ -30,6 +31,19 @@
       margin: 60px auto;
       padding: 40px;
       box-sizing: border-box;
+    }
+
+    .hero-image {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     h1 {
@@ -56,6 +70,14 @@
         padding: 24px;
       }
 
+      .hero-image {
+        margin-bottom: 28px;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+      }
+
       h1 {
         font-size: 34px;
       }
@@ -63,25 +85,16 @@
       p {
         font-size: 18px;
         line-height: 1.65;
-        .hero-image {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
       }
     }
   </style>
 </head>
 <body>
   <div class="page-content">
-    <img src="Selfie_trsp_001.png" alt="Eric and Michelle">
-</div>
+    <div class="hero-image">
+      <img src="Selfie_trsp_001.png" alt="Eric and Michelle">
+    </div>
+
     <h1>Our Story</h1>
 
     <p>
