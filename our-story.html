@@ -22,7 +22,7 @@
       background-repeat: repeat;
       background-position: top left;
       background-size: 50%;
-      font-family: 'DejaVu Serif', Georgia, serif;
+      font-family: 'DejaVu Serif', serif;
       font-weight: 400;
       color: #5a3f2a;
       overflow-x: hidden;
@@ -56,11 +56,17 @@
       letter-spacing: 0.9px;
     }
 
+    /* 👇 this is the micro-kerning fix */
+    .kern-fix {
+      margin-left: 1px;
+    }
+
     p {
       font-size: 20px;
       line-height: 1.7;
       margin-bottom: 24px;
-      font-weight: 580;
+      font-weight: 400;
+      letter-spacing: 0.3px;
     }
 
     @media (max-width: 768px) {
@@ -106,7 +112,8 @@
       <img src="Selfie_trsp_001.png?v=3" alt="Eric and Michelle">
     </div>
 
-    <h1>Our Story</h1>
+    <!-- 👇 only change: micro-kerning applied here -->
+    <h1>Our Stor<span class="kern-fix">y</span></h1>
 
     <p>
       Bread, once a nourishing staple, is now something many struggle with. Our hope is to help restore traditional bread to the American home, and to bring clarity to the role modern processing has played in changing how bread is experienced today. Nothing brings us more joy than seeing people able to enjoy bread again and realize that gluten is not necessarily the problem.
