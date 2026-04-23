@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Story | Bread of Life Mills</title>
 
+  <!-- Shared styles (for floating home button) -->
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
     @font-face {
       font-family: 'DejaVu Serif';
@@ -29,29 +32,29 @@
     .page-content {
       max-width: 900px;
       margin: 0 auto;
-      padding: 0px;
+      padding: 0;
       box-sizing: border-box;
     }
 
     .hero-image {
       text-align: center;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     .hero-image img {
       width: 100%;
-      max-width: 710px;
+      max-width: 650px; /* slightly reduced so title stays visible */
       height: auto;
       display: block;
       margin: 0 auto;
     }
 
     h1 {
-  margin: 1px 0 8px 0;
-  text-align: center;
-  font-size: 42px;
-  font-weight: 600;
-}
+      margin: 2px 0 8px 0;
+      text-align: center;
+      font-size: 42px;
+      font-weight: 600;
+    }
 
     p {
       font-size: 20px;
@@ -66,25 +69,25 @@
       }
 
       .page-content {
-  margin: 0 auto 10px auto;
-  padding: 0 16px;
-}
+        margin: 0 auto 10px auto;
+        padding: 0 16px;
+      }
 
-.hero-image {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
+      .hero-image {
+        margin-top: 0;
+        margin-bottom: 6px;
+      }
 
       .hero-image img {
-  width: 111%;
-  max-width: none;
-  height: auto;
-  display: block;
-  margin: 0;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
+        width: 110%;
+        max-width: none;
+        height: auto;
+        display: block;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
       h1 {
         font-size: 34px;
@@ -100,7 +103,7 @@
 <body>
   <div class="page-content">
     <div class="hero-image">
-      <img src="Selfie_trsp_001.png?v=2" alt="Eric and Michelle">
+      <img src="Selfie_trsp_001.png?v=3" alt="Eric and Michelle">
     </div>
 
     <h1>Our Story</h1>
@@ -125,5 +128,19 @@
       Bread, once a nourishing staple, is now something many struggle with. Our hope is to help restore traditional bread to the American home, and to bring clarity to the role modern processing has played in changing how bread is experienced today. Nothing brings us more joy than seeing people enjoy bread again and realize that gluten is not the problem.
     </p>
   </div>
+
+  <!-- Floating Home Button -->
+  <a
+    href="index.html"
+    class="floating-home-button"
+    aria-label="Return to homepage"
+  >
+    <img
+      src="Home-Button-001.png?v=3"
+      alt="Home"
+      class="floating-home-button-image"
+    />
+  </a>
+
 </body>
 </html>
