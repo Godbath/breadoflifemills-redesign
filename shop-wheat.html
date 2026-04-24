@@ -37,12 +37,26 @@
     .page-content {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 24px 60px 24px;
+      padding: 0;
       box-sizing: border-box;
     }
 
+    /* 🔥 HERO (copied behavior from why-wheat) */
+    .hero-image {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 748px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
     h1 {
-      margin: 0 0 8px 0;
+      margin: 0 0 12px 0;
       text-align: center;
       font-size: 46px;
       font-weight: 700;
@@ -57,12 +71,14 @@
       line-height: 1.6;
       font-weight: 600;
       letter-spacing: 0.25px;
+      padding: 0 16px;
     }
 
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
+      padding: 0 24px 60px 24px;
     }
 
     .product-card {
@@ -113,7 +129,23 @@
 
       .page-content {
         margin: 0 auto 10px auto;
-        padding: 18px 16px 50px 16px;
+        padding: 0 16px;
+      }
+
+      .hero-image {
+        margin-top: 0;
+        margin-bottom: 6px;
+      }
+
+      .hero-image img {
+        width: 110%;
+        max-width: none;
+        height: auto;
+        display: block;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       h1 {
@@ -129,6 +161,7 @@
       .product-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+        padding: 0 0 50px 0;
       }
 
       .product-card img {
@@ -151,6 +184,12 @@
 </head>
 <body>
   <div class="page-content">
+
+    <!-- HERO IMAGE -->
+    <div class="hero-image">
+      <img src="why-wheat-bg.png?v=2" alt="Shop Wheat">
+    </div>
+
     <h1>Shop Wheat</h1>
 
     <p class="intro">
@@ -158,6 +197,8 @@
     </p>
 
     <div class="product-grid">
+
+      <!-- (all your product cards unchanged) -->
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Hard Red Wheat">
