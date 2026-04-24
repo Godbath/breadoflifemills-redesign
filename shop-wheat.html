@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Wheat | Bread of Life Mills</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    @font-face {
+      font-family: 'DejaVu Serif';
+      src: url('DejaVuSerif.woff2?v=2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'DejaVu Serif';
+      src: url('DejaVuSerif-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('parchment_tile.jpg');
+      background-repeat: repeat;
+      background-position: top left;
+      background-size: 50%;
+      font-family: 'DejaVu Serif', serif;
+      color: #5a3f2a;
+      overflow-x: hidden;
+    }
+
+    .page-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 60px 24px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      text-align: center;
+      font-size: 46px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 34px auto;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.6;
+      font-weight: 600;
+      letter-spacing: 0.25px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .product-card {
+      padding: 14px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      display: block;
+      margin: 0 auto 12px auto;
+    }
+
+    .product-card h2 {
+      margin: 0 0 6px 0;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .price {
+      margin: 0 0 8px 0;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .description {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-size: 100%;
+      }
+
+      .page-content {
+        margin: 0 auto 10px auto;
+        padding: 18px 16px 50px 16px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .intro {
+        font-size: 18px;
+        line-height: 1.55;
+        margin-bottom: 26px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .product-card img {
+        max-width: 280px;
+      }
+
+      .product-card h2 {
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+    <h1>Shop Wheat</h1>
+
+    <p class="intro">
+      Whole wheat berries for milling, baking, blending, and returning real grain to the home kitchen.
+    </p>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Hard Red Wheat">
+        <h2>Hard Red</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A strong, hearty wheat berry with classic whole wheat flavor and excellent bread-making potential.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Kamut Wheat">
+        <h2>Kamut</h2>
+        <p class="price">$0.00</p>
+        <p class="description">An ancient grain with a rich golden color, buttery flavor, and satisfying depth.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="White Sonoran Wheat">
+        <h2>White Sonoran</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A heritage Arizona wheat known for its mild flavor, soft texture, and beautiful versatility.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Spelt Wheat">
+        <h2>Spelt</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A traditional grain with a lightly sweet, nutty character and tender baking qualities.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Emmer Wheat">
+        <h2>Emmer</h2>
+        <p class="price">$0.00</p>
+        <p class="description">An ancient wheat with earthy flavor, rustic character, and deep old-world appeal.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Heirloom Soft White Wheat">
+        <h2>Heirloom Soft White</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A gentler wheat berry ideal for pastries, flatbreads, lighter loaves, and everyday baking.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Durum Wheat">
+        <h2>Durum</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A hard golden wheat traditionally prized for pasta, rustic breads, and rich color.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Einkorn Wheat">
+        <h2>Einkorn</h2>
+        <p class="price">$0.00</p>
+        <p class="description">One of the oldest cultivated wheats, with a delicate flavor and naturally distinct character.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Rouge Bordeaux Wheat">
+        <h2>Rouge Bordeaux</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A flavorful heritage wheat with depth, warmth, and a beautiful rustic baking profile.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="/" class="floating-home-button" aria-label="Return to homepage">
+    <img src="Home-Button-001.png?v=3" alt="Home" class="floating-home-button-image" />
+  </a>
+
+</body>
+</html>
