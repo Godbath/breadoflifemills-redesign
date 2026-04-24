@@ -11,12 +11,18 @@
 
   <style>
   .story-menu-wrap {
-    transform: translateX(-400px); /* desktop position */
+    transform: translateX(-400px); /* desktop */
   }
 
   @media (max-width: 768px) {
     .story-menu-wrap {
-      transform: translateX(-107px); /* mobile position */
+      transform: translateX(-106px); /* phone portrait */
+    }
+  }
+
+  @media (max-height: 500px) and (orientation: landscape) {
+    .story-menu-wrap {
+      transform: translateX(-220px); /* phone landscape */
     }
   }
 </style>
