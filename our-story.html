@@ -15,6 +15,14 @@
       font-style: normal;
     }
 
+    /* 🔥 NEW: Bold version */
+    @font-face {
+      font-family: 'DejaVu Serif';
+      src: url('DejaVuSerif-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -23,7 +31,7 @@
       background-position: top left;
       background-size: 50%;
       font-family: 'DejaVu Serif', serif;
-      font-weight: 600;
+      font-weight: 400;
       color: #5a3f2a;
       overflow-x: hidden;
     }
@@ -56,13 +64,13 @@
       letter-spacing: 0.6px;
     }
 
-    /* 🚨 EXTREME TEST — you should 100% see this */
     .kern-fix {
-  display: inline-block;
-  transform: translateX(3.5px);
-  color: inherit;
+      display: inline-block;
+      transform: translateX(3.5px);
+      color: inherit;
     }
 
+    /* 🔥 THIS NOW WORKS PROPERLY */
     p {
       font-size: 20px;
       line-height: 1.7;
