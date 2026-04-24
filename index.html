@@ -22,34 +22,34 @@
       transform: translateX(-110px) translateY(25px);
     }
 
-    .products-baked-link {
-      top: calc(100% + 156px);
-    }
-
     .products-menu-wrap .process-nav {
       background: rgba(255, 230, 0, 0.35);
       outline: 2px solid #d6aa00;
     }
 
-    .products-menu-wrap .process-dropdown-link {
+    .products-menu-wrap .products-dropdown-link {
       position: absolute;
       width: 25%;
-      height: 13px; /* 52 / 4 */
+      height: 13px;
     }
 
-    .products-menu-wrap .process-method-link {
+    .products-wheat-link {
       background: rgba(255, 0, 0, 0.25);
       outline: 2px solid red;
+      transform: translateX(0px) translateY(0px);
     }
 
-    .products-menu-wrap .process-care-link {
+    .products-flour-link {
       background: rgba(0, 0, 255, 0.25);
       outline: 2px solid blue;
+      transform: translateX(0px) translateY(0px);
     }
 
-    .products-menu-wrap .products-baked-link {
+    .products-baked-link {
+      top: calc(100% + 156px);
       background: rgba(0, 180, 0, 0.25);
       outline: 2px solid green;
+      transform: translateX(0px) translateY(0px);
     }
 
     @media (max-width: 768px) {
@@ -115,9 +115,9 @@
         <div class="process-dropdown">
           <img src="Products-menu.png?v=2" alt="Products dropdown menu" class="process-dropdown-image"/>
 
-          <a href="shop-wheat.html" class="process-dropdown-link process-method-link" aria-label="Go to Shop Wheat page"></a>
-          <a href="shop-flour.html" class="process-dropdown-link process-care-link" aria-label="Go to Shop Flour page"></a>
-          <a href="shop-baked-goods.html" class="process-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
+          <a href="shop-wheat.html" class="products-dropdown-link products-wheat-link" aria-label="Go to Shop Wheat page"></a>
+          <a href="shop-flour.html" class="products-dropdown-link products-flour-link" aria-label="Go to Shop Flour page"></a>
+          <a href="shop-baked-goods.html" class="products-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
         </div>
       </div>
 
