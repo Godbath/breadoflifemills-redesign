@@ -22,6 +22,11 @@
       transform: translateX(-120px) translateY(25px);
     }
 
+    .products-menu-wrap .process-nav {
+      background: rgba(255, 230, 0, 0.35);
+      outline: 2px solid #d6aa00;
+    }
+
     .products-menu-wrap .products-dropdown-link {
       position: absolute;
       width: 25%;
@@ -30,15 +35,21 @@
 
     .products-wheat-link {
       transform: translateX(97px) translateY(-105px);
+      background: rgba(255, 0, 0, 0.25);
+      outline: 2px solid red;
     }
 
     .products-flour-link {
       transform: translateX(97px) translateY(-83px);
+      background: rgba(0, 0, 255, 0.25);
+      outline: 2px solid blue;
     }
 
     .products-baked-link {
       top: calc(100% + 156px);
       transform: translateX(97px) translateY(-218px);
+      background: rgba(0, 180, 0, 0.25);
+      outline: 2px solid green;
     }
 
     @media (max-width: 768px) {
@@ -51,7 +62,20 @@
       }
 
       .products-menu-wrap .process-dropdown {
-        transform: translateY(55px);
+        transform: translateX(-40px) translateY(55px);
+      }
+
+      .products-wheat-link {
+        transform: translateX(60px) translateY(-70px);
+      }
+
+      .products-flour-link {
+        transform: translateX(60px) translateY(-48px);
+      }
+
+      .products-baked-link {
+        top: calc(100% + 156px);
+        transform: translateX(60px) translateY(-183px);
       }
     }
 
@@ -65,7 +89,20 @@
       }
 
       .products-menu-wrap .process-dropdown {
-        transform: translateY(55px);
+        transform: translateX(-60px) translateY(55px);
+      }
+
+      .products-wheat-link {
+        transform: translateX(75px) translateY(-70px);
+      }
+
+      .products-flour-link {
+        transform: translateX(75px) translateY(-48px);
+      }
+
+      .products-baked-link {
+        top: calc(100% + 156px);
+        transform: translateX(75px) translateY(-183px);
       }
     }
   </style>
