@@ -10,40 +10,63 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* Our Story (far left) */
+    /* POSITIONING */
+
     .story-menu-wrap {
       transform: translateX(-400px);
     }
 
-    /* Products (CENTERED between Story and Process) */
     .products-menu-wrap {
-      transform: translateX(-200px);
+      transform: translateX(-200px) translateY(30px); /* moved DOWN */
     }
 
-    /* Third button spacing */
+    /* THIRD TARGET (Baked Goods) */
     .products-baked-link {
-      top: calc(100% + 104px);
+      top: calc(100% + 156px);
     }
 
-    /* MOBILE PORTRAIT */
+    /* 🔥 DEBUG MODE (VISIBLE TARGETS) */
+
+    .products-menu-wrap .process-dropdown-link {
+      position: absolute;
+      width: 100%;
+      height: 52px;
+    }
+
+    .products-menu-wrap .process-method-link {
+      background: rgba(255, 0, 0, 0.25);
+      outline: 2px solid red;
+    }
+
+    .products-menu-wrap .process-care-link {
+      background: rgba(0, 0, 255, 0.25);
+      outline: 2px solid blue;
+    }
+
+    .products-menu-wrap .products-baked-link {
+      background: rgba(0, 180, 0, 0.25);
+      outline: 2px solid green;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 768px) {
       .story-menu-wrap {
         transform: translateX(-106px);
       }
 
       .products-menu-wrap {
-        transform: translateX(-55px); /* halfway between story & process */
+        transform: translateX(-55px) translateY(30px);
       }
     }
 
-    /* MOBILE LANDSCAPE */
     @media (max-height: 500px) and (orientation: landscape) {
       .story-menu-wrap {
         transform: translateX(-220px);
       }
 
       .products-menu-wrap {
-        transform: translateX(-120px); /* halfway again */
+        transform: translateX(-120px) translateY(30px);
       }
     }
   </style>
@@ -67,7 +90,7 @@
         aria-label="Explore Our Story page"
       ></a>
 
-      <!-- OUR STORY DROPDOWN -->
+      <!-- OUR STORY -->
       <div class="process-menu-wrap story-menu-wrap">
         <a href="#" class="hotspot process-nav"></a>
 
@@ -79,7 +102,7 @@
         </div>
       </div>
 
-      <!-- PRODUCTS DROPDOWN (CENTERED) -->
+      <!-- PRODUCTS -->
       <div class="process-menu-wrap products-menu-wrap">
         <a href="#" class="hotspot process-nav"></a>
 
@@ -92,7 +115,7 @@
         </div>
       </div>
 
-      <!-- PROCESS DROPDOWN (right) -->
+      <!-- PROCESS -->
       <div class="process-menu-wrap">
         <a href="#" class="hotspot process-nav"></a>
 
