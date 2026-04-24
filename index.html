@@ -10,22 +10,38 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-  .story-menu-wrap {
-    transform: translateX(-400px); /* desktop */
-  }
-
-  @media (max-width: 768px) {
     .story-menu-wrap {
-      transform: translateX(-106px); /* phone portrait */
+      transform: translateX(-400px); /* desktop */
     }
-  }
 
-  @media (max-height: 500px) and (orientation: landscape) {
-    .story-menu-wrap {
-      transform: translateX(-220px); /* phone landscape */
+    .products-menu-wrap {
+      transform: translateX(-200px); /* desktop */
     }
-  }
-</style>
+
+    .products-baked-link {
+      top: calc(100% + 104px);
+    }
+
+    @media (max-width: 768px) {
+      .story-menu-wrap {
+        transform: translateX(-106px); /* phone portrait */
+      }
+
+      .products-menu-wrap {
+        transform: translateX(-20px); /* phone portrait */
+      }
+    }
+
+    @media (max-height: 500px) and (orientation: landscape) {
+      .story-menu-wrap {
+        transform: translateX(-220px); /* phone landscape */
+      }
+
+      .products-menu-wrap {
+        transform: translateX(-80px); /* phone landscape */
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="mockup-page">
@@ -71,6 +87,41 @@
             href="why-wheat.html"
             class="process-dropdown-link process-care-link"
             aria-label="Go to Why Whole Wheat page"
+          ></a>
+        </div>
+      </div>
+
+      <!-- top nav: Products dropdown -->
+      <div class="process-menu-wrap products-menu-wrap">
+        <a
+          href="#"
+          class="hotspot process-nav"
+          aria-label="Open Products menu"
+        ></a>
+
+        <div class="process-dropdown">
+          <img
+            src="Products-menu.png?v=1"
+            alt="Products dropdown menu"
+            class="process-dropdown-image"
+          />
+
+          <a
+            href="shop-wheat.html"
+            class="process-dropdown-link process-method-link"
+            aria-label="Go to Shop Wheat page"
+          ></a>
+
+          <a
+            href="shop-flour.html"
+            class="process-dropdown-link process-care-link"
+            aria-label="Go to Shop Flour page"
+          ></a>
+
+          <a
+            href="shop-baked-goods.html"
+            class="process-dropdown-link products-baked-link"
+            aria-label="Go to Shop Baked Goods page"
           ></a>
         </div>
       </div>
