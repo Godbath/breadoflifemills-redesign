@@ -10,23 +10,25 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* POSITIONING */
-
     .story-menu-wrap {
       transform: translateX(-400px);
     }
 
     .products-menu-wrap {
-      transform: translateX(-200px) translateY(30px); /* moved DOWN */
+      transform: translateX(-200px) translateY(60px);
     }
 
-    /* THIRD TARGET (Baked Goods) */
     .products-baked-link {
       top: calc(100% + 156px);
     }
 
-    /* 🔥 DEBUG MODE (VISIBLE TARGETS) */
+    /* DEBUG MODE: visible Products main hover target */
+    .products-menu-wrap .process-nav {
+      background: rgba(255, 230, 0, 0.35);
+      outline: 2px solid #d6aa00;
+    }
 
+    /* DEBUG MODE: visible Products dropdown targets */
     .products-menu-wrap .process-dropdown-link {
       position: absolute;
       width: 100%;
@@ -48,15 +50,13 @@
       outline: 2px solid green;
     }
 
-    /* MOBILE */
-
     @media (max-width: 768px) {
       .story-menu-wrap {
         transform: translateX(-106px);
       }
 
       .products-menu-wrap {
-        transform: translateX(-55px) translateY(30px);
+        transform: translateX(-55px) translateY(60px);
       }
     }
 
@@ -66,7 +66,7 @@
       }
 
       .products-menu-wrap {
-        transform: translateX(-120px) translateY(30px);
+        transform: translateX(-120px) translateY(60px);
       }
     }
   </style>
@@ -80,59 +80,51 @@
         class="mockup-image"
       />
 
-      <!-- invisible scroll target -->
       <div id="contact-section" class="anchor-target contact-target" aria-hidden="true"></div>
 
-      <!-- hero button -->
       <a
         href="our-story.html"
         class="hotspot hero-explore-story"
         aria-label="Explore Our Story page"
       ></a>
 
-      <!-- OUR STORY -->
       <div class="process-menu-wrap story-menu-wrap">
-        <a href="#" class="hotspot process-nav"></a>
+        <a href="#" class="hotspot process-nav" aria-label="Open Our Story menu"></a>
 
         <div class="process-dropdown">
-          <img src="Our-Story-menu-001.png?v=2" class="process-dropdown-image"/>
+          <img src="Our-Story-menu-001.png?v=2" alt="Our Story dropdown menu" class="process-dropdown-image"/>
 
-          <a href="our-story.html" class="process-dropdown-link process-method-link"></a>
-          <a href="why-wheat.html" class="process-dropdown-link process-care-link"></a>
+          <a href="our-story.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Story page"></a>
+          <a href="why-wheat.html" class="process-dropdown-link process-care-link" aria-label="Go to Why Whole Wheat page"></a>
         </div>
       </div>
 
-      <!-- PRODUCTS -->
       <div class="process-menu-wrap products-menu-wrap">
-        <a href="#" class="hotspot process-nav"></a>
+        <a href="#" class="hotspot process-nav" aria-label="Open Products menu"></a>
 
         <div class="process-dropdown">
-          <img src="Products-menu.png?v=2" class="process-dropdown-image"/>
+          <img src="Products-menu.png?v=2" alt="Products dropdown menu" class="process-dropdown-image"/>
 
-          <a href="shop-wheat.html" class="process-dropdown-link process-method-link"></a>
-          <a href="shop-flour.html" class="process-dropdown-link process-care-link"></a>
-          <a href="shop-baked-goods.html" class="process-dropdown-link products-baked-link"></a>
+          <a href="shop-wheat.html" class="process-dropdown-link process-method-link" aria-label="Go to Shop Wheat page"></a>
+          <a href="shop-flour.html" class="process-dropdown-link process-care-link" aria-label="Go to Shop Flour page"></a>
+          <a href="shop-baked-goods.html" class="process-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
         </div>
       </div>
 
-      <!-- PROCESS -->
       <div class="process-menu-wrap">
-        <a href="#" class="hotspot process-nav"></a>
+        <a href="#" class="hotspot process-nav" aria-label="Open Process menu"></a>
 
         <div class="process-dropdown">
-          <img src="Process-Dropdown-001.png" class="process-dropdown-image"/>
+          <img src="Process-Dropdown-001.png" alt="Process dropdown menu" class="process-dropdown-image"/>
 
-          <a href="our-method.html" class="process-dropdown-link process-method-link"></a>
-          <a href="care.html" class="process-dropdown-link process-care-link"></a>
+          <a href="our-method.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Method page"></a>
+          <a href="care.html" class="process-dropdown-link process-care-link" aria-label="Go to Care page"></a>
         </div>
       </div>
 
-      <!-- CONTACT -->
-      <a href="#contact-section" class="hotspot top-contact"></a>
+      <a href="#contact-section" class="hotspot top-contact" aria-label="Go to Contact section"></a>
 
-      <!-- EMAIL -->
-      <a href="mailto:breadoflifemills@gmail.com" class="hotspot email-link"></a>
-
+      <a href="mailto:breadoflifemills@gmail.com" class="hotspot email-link" aria-label="Email Bread of Life Mills"></a>
     </div>
   </main>
 </body>
