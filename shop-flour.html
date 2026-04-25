@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Wheat | Bread of Life Mills</title>
+  <title>Shop Flour | Bread of Life Mills</title>
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -41,7 +41,6 @@
       box-sizing: border-box;
     }
 
-    /* 🔥 HERO (copied behavior from why-wheat) */
     .hero-image {
       text-align: center;
       margin-bottom: 0;
@@ -116,6 +115,83 @@
       letter-spacing: 0.2px;
     }
 
+    .product-option-control,
+    .quantity-control {
+      margin: 12px 0 10px 0;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .product-option-control select,
+    .quantity-control input {
+      padding: 5px;
+      margin-left: 6px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      color: #5a3f2a;
+    }
+
+    .quantity-control input {
+      width: 58px;
+      text-align: center;
+    }
+
+    .add-to-cart-button {
+      padding: 8px 16px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #5a3f2a;
+      background: rgba(255, 248, 220, 0.85);
+      border: 2px solid #5a3f2a;
+      cursor: pointer;
+    }
+
+    .add-to-cart-message {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      min-height: 20px;
+    }
+
+    .floating-cart-button {
+      position: fixed;
+      top: 92px;
+      right: 23px;
+      z-index: 9999;
+      display: inline-block;
+      width: 180px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .floating-cart-button-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: 3px;
+      min-width: 25px;
+      height: 25px;
+      padding: 2px 5px;
+      box-sizing: border-box;
+      border-radius: 999px;
+      background: #5a3f2a;
+      color: #fff8dc;
+      border: 2px solid #fff8dc;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 14px;
+      text-align: center;
+      display: none;
+    }
+
     @media (max-width: 900px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -179,15 +255,29 @@
       .description {
         font-size: 18px;
       }
+
+      .floating-cart-button {
+        top: 38px;
+        right: 6px;
+        width: 72px;
+      }
+
+      .cart-count {
+        top: -4px;
+        right: 61px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 11px;
+        line-height: 13px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page-content">
 
-    <!-- HERO IMAGE -->
     <div class="hero-image">
-      <img src="why-wheat-bg.png?v=2" alt="Shop Wheat">
+      <img src="why-wheat-bg.png?v=2" alt="Shop Flour">
     </div>
 
     <h1>Shop Flour</h1>
@@ -198,13 +288,34 @@
 
     <div class="product-grid">
 
-      <!-- (all your product cards unchanged) -->
-
       <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Hard Red Wheat">
+        <img src="hard-red-spring-wheat.jpg" alt="Heritage Blend Flour">
         <h2>Heritage Blend</h2>
-        <p class="price">$0.00</p>
-        <p class="description">A strong, hearty wheat berry with classic whole wheat flavor and excellent bread-making potential.</p>
+        <p class="price">5 lb: $16.00 | 10 lb: $28.00</p>
+        <p class="description">Our classic go-to blend for traditional sourdough, combining Hard Red, White Sonoran, and Rouge Bordeaux for strength, flavor, and beautiful fermentation.</p>
+
+        <div class="product-option-control">
+          <label for="heritage-blend-size">Size:</label>
+          <select id="heritage-blend-size">
+            <option value="5 lb bag" data-price="16.00">5 lb bag - $16.00</option>
+            <option value="10 lb bag" data-price="28.00">10 lb bag - $28.00</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="heritage-blend-quantity">Qty:</label>
+          <input id="heritage-blend-quantity" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="heritage-blend-flour"
+          data-product-name="Heritage Blend Flour"
+        >
+          Add to Cart
+        </button>
+
+        <p id="heritage-blend-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
@@ -269,6 +380,81 @@
   <a href="/" class="floating-home-button" aria-label="Return to homepage">
     <img src="Home-Button-001.png?v=3" alt="Home" class="floating-home-button-image" />
   </a>
+
+  <a href="cart.html" class="floating-cart-button" aria-label="View cart">
+    <img src="cart-button.png" alt="Cart" class="floating-cart-button-image">
+    <span id="cart-count" class="cart-count">0</span>
+  </a>
+
+  <script>
+    const heritageBlendButton = document.querySelector('[data-product-id="heritage-blend-flour"]');
+    const heritageBlendSize = document.getElementById('heritage-blend-size');
+    const heritageBlendQuantity = document.getElementById('heritage-blend-quantity');
+    const heritageBlendMessage = document.getElementById('heritage-blend-cart-message');
+    const cartCount = document.getElementById('cart-count');
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      let totalItems = 0;
+
+      cart.forEach(function (item) {
+        totalItems += item.quantity;
+      });
+
+      cartCount.textContent = totalItems;
+
+      if (totalItems > 0) {
+        cartCount.style.display = 'block';
+      } else {
+        cartCount.style.display = 'none';
+      }
+    }
+
+    heritageBlendButton.addEventListener('click', function () {
+      const selectedOption = heritageBlendSize.options[heritageBlendSize.selectedIndex];
+
+      const productBaseId = heritageBlendButton.dataset.productId;
+      const productName = heritageBlendButton.dataset.productName;
+      const productSize = selectedOption.value;
+      const productPrice = parseFloat(selectedOption.dataset.price);
+      const quantity = parseInt(heritageBlendQuantity.value, 10);
+
+      if (!quantity || quantity < 1) {
+        heritageBlendMessage.textContent = 'Please select a quantity of at least 1.';
+        return;
+      }
+
+      const cartItemId = productBaseId + '-' + productSize.replace(/\s+/g, '-').toLowerCase();
+
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      const existingItem = cart.find(function (item) {
+        return item.id === cartItemId;
+      });
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          id: cartItemId,
+          name: productName,
+          size: productSize,
+          price: productPrice,
+          quantity: quantity
+        });
+      }
+
+      localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
+
+      heritageBlendMessage.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
+      heritageBlendQuantity.value = 1;
+
+      updateCartCount();
+    });
+
+    updateCartCount();
+  </script>
 
 </body>
 </html>
