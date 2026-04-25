@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Shop Baked Goods | Bread of Life Mills</title>
 
   <link rel="stylesheet" href="styles.css" />
@@ -324,6 +324,22 @@
 
       .floating-shop-link {
         right: 24px !important;
+      }
+    }
+
+
+    /* Landscape mobile safeguard: prevents the browser from loading this page slightly zoomed-in
+       when opened from the homepage while the phone is already sideways. */
+    @media (max-width: 932px) and (max-height: 500px) and (orientation: landscape) {
+      .hero-image img {
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        position: static;
+        left: auto;
+        transform: none;
       }
     }
   </style>
