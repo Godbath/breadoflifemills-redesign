@@ -116,6 +116,45 @@
       letter-spacing: 0.2px;
     }
 
+    .product-option-control,
+    .quantity-control {
+      margin: 12px 0 10px 0;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .product-option-control select,
+    .quantity-control input {
+      padding: 5px;
+      margin-left: 6px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      color: #5a3f2a;
+    }
+
+    .quantity-control input {
+      width: 58px;
+      text-align: center;
+    }
+
+    .add-to-cart-button {
+      padding: 8px 16px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #5a3f2a;
+      background: rgba(255, 248, 220, 0.85);
+      border: 2px solid #5a3f2a;
+      cursor: pointer;
+    }
+
+    .add-to-cart-message {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      min-height: 20px;
+    }
+
     @media (max-width: 900px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -203,8 +242,31 @@
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Hard Red Wheat">
         <h2>Hard Red</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">A strong, hearty wheat berry with classic whole wheat flavor and excellent bread-making potential.</p>
+
+        <div class="product-option-control">
+          <label for="hard-red-size">Size:</label>
+          <select id="hard-red-size">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="hard-red-quantity">Qty:</label>
+          <input id="hard-red-quantity" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="hard-red-wheat"
+          data-product-name="Hard Red Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="hard-red-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
@@ -269,6 +331,53 @@
   <a href="/" class="floating-home-button" aria-label="Return to homepage">
     <img src="Home-Button-001.png?v=3" alt="Home" class="floating-home-button-image" />
   </a>
+
+  <script>
+    const hardRedButton = document.querySelector('[data-product-id="hard-red-wheat"]');
+    const hardRedSize = document.getElementById('hard-red-size');
+    const hardRedQuantity = document.getElementById('hard-red-quantity');
+    const hardRedMessage = document.getElementById('hard-red-cart-message');
+
+    hardRedButton.addEventListener('click', function () {
+      const selectedOption = hardRedSize.options[hardRedSize.selectedIndex];
+
+      const productBaseId = hardRedButton.dataset.productId;
+      const productName = hardRedButton.dataset.productName;
+      const productSize = selectedOption.value;
+      const productPrice = parseFloat(selectedOption.dataset.price);
+      const quantity = parseInt(hardRedQuantity.value, 10);
+
+      if (!quantity || quantity < 1) {
+        hardRedMessage.textContent = 'Please select a quantity of at least 1.';
+        return;
+      }
+
+      const cartItemId = productBaseId + '-' + productSize.replace(/\s+/g, '-').toLowerCase();
+
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      const existingItem = cart.find(function (item) {
+        return item.id === cartItemId;
+      });
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          id: cartItemId,
+          name: productName,
+          size: productSize,
+          price: productPrice,
+          quantity: quantity
+        });
+      }
+
+      localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
+
+      hardRedMessage.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
+      hardRedQuantity.value = 1;
+    });
+  </script>
 
 </body>
 </html>
