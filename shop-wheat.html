@@ -333,16 +333,16 @@
         <p class="description">A strong, hearty wheat berry with classic whole wheat flavor and excellent bread-making potential.</p>
 
         <div class="product-option-control">
-          <label for="hard-red-size">Size:</label>
-          <select id="hard-red-size">
+          <label for="hard-red-wheat-size">Size:</label>
+          <select id="hard-red-wheat-size" class="product-size-select">
             <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
             <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
           </select>
         </div>
 
         <div class="quantity-control">
-          <label for="hard-red-quantity">Qty:</label>
-          <input id="hard-red-quantity" type="number" min="1" value="1">
+          <label for="hard-red-wheat-quantity">Qty:</label>
+          <input id="hard-red-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
         </div>
 
         <button
@@ -353,63 +353,247 @@
           Add to Cart
         </button>
 
-        <p id="hard-red-cart-message" class="add-to-cart-message" aria-live="polite"></p>
+        <p id="hard-red-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Kamut Wheat">
         <h2>Kamut</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">An ancient grain with a rich golden color, buttery flavor, and satisfying depth.</p>
+
+        <div class="product-option-control">
+          <label for="kamut-wheat-size">Size:</label>
+          <select id="kamut-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="kamut-wheat-quantity">Qty:</label>
+          <input id="kamut-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="kamut-wheat"
+          data-product-name="Kamut Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="kamut-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="White Sonoran Wheat">
         <h2>White Sonoran</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">A heritage Arizona wheat known for its mild flavor, soft texture, and beautiful versatility.</p>
+
+        <div class="product-option-control">
+          <label for="white-sonoran-wheat-size">Size:</label>
+          <select id="white-sonoran-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="white-sonoran-wheat-quantity">Qty:</label>
+          <input id="white-sonoran-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="white-sonoran-wheat"
+          data-product-name="White Sonoran Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="white-sonoran-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Spelt Wheat">
         <h2>Spelt</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">A traditional grain with a lightly sweet, nutty character and tender baking qualities.</p>
+
+        <div class="product-option-control">
+          <label for="spelt-wheat-size">Size:</label>
+          <select id="spelt-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="spelt-wheat-quantity">Qty:</label>
+          <input id="spelt-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="spelt-wheat"
+          data-product-name="Spelt Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="spelt-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Emmer Wheat">
         <h2>Emmer</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">An ancient wheat with earthy flavor, rustic character, and deep old-world appeal.</p>
+
+        <div class="product-option-control">
+          <label for="emmer-wheat-size">Size:</label>
+          <select id="emmer-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="emmer-wheat-quantity">Qty:</label>
+          <input id="emmer-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="emmer-wheat"
+          data-product-name="Emmer Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="emmer-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Heirloom Soft White Wheat">
         <h2>Heirloom Soft White</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">A gentler wheat berry ideal for pastries, flatbreads, lighter loaves, and everyday baking.</p>
+
+        <div class="product-option-control">
+          <label for="heirloom-soft-white-wheat-size">Size:</label>
+          <select id="heirloom-soft-white-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="heirloom-soft-white-wheat-quantity">Qty:</label>
+          <input id="heirloom-soft-white-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="heirloom-soft-white-wheat"
+          data-product-name="Heirloom Soft White Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="heirloom-soft-white-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Durum Wheat">
         <h2>Durum</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">A hard golden wheat traditionally prized for pasta, rustic breads, and rich color.</p>
+
+        <div class="product-option-control">
+          <label for="durum-wheat-size">Size:</label>
+          <select id="durum-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="durum-wheat-quantity">Qty:</label>
+          <input id="durum-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="durum-wheat"
+          data-product-name="Durum Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="durum-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Einkorn Wheat">
         <h2>Einkorn</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">One of the oldest cultivated wheats, with a delicate flavor and naturally distinct character.</p>
+
+        <div class="product-option-control">
+          <label for="einkorn-wheat-size">Size:</label>
+          <select id="einkorn-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="einkorn-wheat-quantity">Qty:</label>
+          <input id="einkorn-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="einkorn-wheat"
+          data-product-name="Einkorn Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="einkorn-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
         <img src="hard-red-spring-wheat.jpg" alt="Rouge Bordeaux Wheat">
         <h2>Rouge Bordeaux</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $7.50 | 10 lb: $12.50</p>
         <p class="description">A flavorful heritage wheat with depth, warmth, and a beautiful rustic baking profile.</p>
+
+        <div class="product-option-control">
+          <label for="rouge-bordeaux-wheat-size">Size:</label>
+          <select id="rouge-bordeaux-wheat-size" class="product-size-select">
+            <option value="5 lb bag" data-price="7.50">5 lb bag - $7.50</option>
+            <option value="10 lb bag" data-price="12.50">10 lb bag - $12.50</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="rouge-bordeaux-wheat-quantity">Qty:</label>
+          <input id="rouge-bordeaux-wheat-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="rouge-bordeaux-wheat"
+          data-product-name="Rouge Bordeaux Wheat"
+        >
+          Add to Cart
+        </button>
+
+        <p id="rouge-bordeaux-wheat-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
     </div>
@@ -433,10 +617,7 @@
   </a>
 
   <script>
-    const hardRedButton = document.querySelector('[data-product-id="hard-red-wheat"]');
-    const hardRedSize = document.getElementById('hard-red-size');
-    const hardRedQuantity = document.getElementById('hard-red-quantity');
-    const hardRedMessage = document.getElementById('hard-red-cart-message');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
     const cartCount = document.getElementById('cart-count');
 
     function updateCartCount() {
@@ -457,46 +638,52 @@
       }
     }
 
-    hardRedButton.addEventListener('click', function () {
-      const selectedOption = hardRedSize.options[hardRedSize.selectedIndex];
+    addToCartButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const productCard = button.closest('.product-card');
+        const sizeSelect = productCard.querySelector('.product-size-select');
+        const quantityInput = productCard.querySelector('.product-quantity-input');
+        const message = productCard.querySelector('.add-to-cart-message');
+        const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
 
-      const productBaseId = hardRedButton.dataset.productId;
-      const productName = hardRedButton.dataset.productName;
-      const productSize = selectedOption.value;
-      const productPrice = parseFloat(selectedOption.dataset.price);
-      const quantity = parseInt(hardRedQuantity.value, 10);
+        const productBaseId = button.dataset.productId;
+        const productName = button.dataset.productName;
+        const productSize = selectedOption.value;
+        const productPrice = parseFloat(selectedOption.dataset.price);
+        const quantity = parseInt(quantityInput.value, 10);
 
-      if (!quantity || quantity < 1) {
-        hardRedMessage.textContent = 'Please select a quantity of at least 1.';
-        return;
-      }
+        if (!quantity || quantity < 1) {
+          message.textContent = 'Please select a quantity of at least 1.';
+          return;
+        }
 
-      const cartItemId = productBaseId + '-' + productSize.replace(/\s+/g, '-').toLowerCase();
+        const cartItemId = productBaseId + '-' + productSize.replace(/\s+/g, '-').toLowerCase();
 
-      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+        const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
 
-      const existingItem = cart.find(function (item) {
-        return item.id === cartItemId;
-      });
-
-      if (existingItem) {
-        existingItem.quantity += quantity;
-      } else {
-        cart.push({
-          id: cartItemId,
-          name: productName,
-          size: productSize,
-          price: productPrice,
-          quantity: quantity
+        const existingItem = cart.find(function (item) {
+          return item.id === cartItemId;
         });
-      }
 
-      localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
+        if (existingItem) {
+          existingItem.quantity += quantity;
+        } else {
+          cart.push({
+            id: cartItemId,
+            name: productName,
+            size: productSize,
+            price: productPrice,
+            quantity: quantity
+          });
+        }
 
-      hardRedMessage.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
-      hardRedQuantity.value = 1;
+        localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
 
-      updateCartCount();
+        message.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
+        quantityInput.value = 1;
+
+        updateCartCount();
+      });
     });
 
     updateCartCount();
