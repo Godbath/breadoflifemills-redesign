@@ -11,12 +11,15 @@
     @font-face {
       font-family: 'DejaVu Serif';
       src: url('DejaVuSerif.woff2?v=2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
     }
 
     @font-face {
       font-family: 'DejaVu Serif';
       src: url('DejaVuSerif-Bold.woff2') format('woff2');
       font-weight: 700;
+      font-style: normal;
     }
 
     body {
@@ -24,6 +27,7 @@
       padding: 0;
       background-image: url('parchment_tile.jpg');
       background-repeat: repeat;
+      background-position: top left;
       background-size: 50%;
       font-family: 'DejaVu Serif', serif;
       color: #5a3f2a;
@@ -33,23 +37,30 @@
     .page-content {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    /* 🔥 HERO (copied behavior from why-wheat) */
     .hero-image {
       text-align: center;
+      margin-bottom: 0;
     }
 
     .hero-image img {
       width: 100%;
       max-width: 650px;
+      height: auto;
       display: block;
       margin: 0 auto;
     }
 
     h1 {
+      margin: 0 0 4px 0;
       text-align: center;
       font-size: 46px;
-      margin: 0 0 4px 0;
+      font-weight: 700;
+      letter-spacing: 0.6px;
     }
 
     .intro {
@@ -57,7 +68,9 @@
       margin: 0 auto 13px auto;
       text-align: center;
       font-size: 20px;
+      line-height: 1.6;
       font-weight: 600;
+      letter-spacing: 0.25px;
       padding: 0 16px;
     }
 
@@ -65,38 +78,48 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
-      padding: 0 24px 60px;
+      padding: 0 24px 60px 24px;
     }
 
     .product-card {
-      text-align: center;
       padding: 14px;
+      box-sizing: border-box;
+      text-align: center;
     }
 
     .product-card img {
       width: 100%;
       max-width: 260px;
-      margin: 0 auto 12px;
+      height: auto;
       display: block;
+      margin: 0 auto 12px auto;
     }
 
     .product-card h2 {
+      margin: 0 0 6px 0;
       font-size: 25px;
-      margin: 0 0 6px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
     }
 
     .price {
+      margin: 0 0 8px 0;
       font-size: 21px;
-      margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .description {
+      margin: 0;
       font-size: 18px;
+      line-height: 1.45;
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
 
     .product-option-control,
     .quantity-control {
-      margin: 12px 0 10px;
+      margin: 12px 0 10px 0;
+      font-size: 17px;
       font-weight: 700;
     }
 
@@ -104,7 +127,10 @@
     .quantity-control input {
       padding: 5px;
       margin-left: 6px;
-      font-family: 'DejaVu Serif';
+      margin-top: 3px; /* 👈 adds space below "Type" */
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      color: #5a3f2a;
     }
 
     .quantity-control input {
@@ -114,55 +140,148 @@
 
     .add-to-cart-button {
       padding: 8px 16px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
       font-weight: 700;
-      background: rgba(255,248,220,0.85);
+      color: #5a3f2a;
+      background: rgba(255, 248, 220, 0.85);
       border: 2px solid #5a3f2a;
       cursor: pointer;
+    }
+
+    .add-to-cart-message {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      min-height: 20px;
     }
 
     .floating-cart-button {
       position: fixed;
       top: 88px;
       right: 23px;
-      width: 180px;
       z-index: 9999;
+      display: inline-block;
+      width: 180px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .floating-cart-button-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: 3px;
+      min-width: 25px;
+      height: 25px;
+      padding: 2px 5px;
+      box-sizing: border-box;
+      border-radius: 999px;
+      background: #5a3f2a;
+      color: #fff8dc;
+      border: 2px solid #fff8dc;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 14px;
+      text-align: center;
+      display: none;
     }
 
     .floating-shop-link {
       position: fixed;
       right: 38px;
-      width: 150px;
       z-index: 9998;
+      display: inline-block;
+      width: 150px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
     }
 
-    .floating-wheat-button { top: 153px; }
-    .floating-flour-button { top: 231px; }
+    .floating-shop-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-    /* ================= MOBILE ================= */
+    .floating-wheat-button {
+      top: 153px;
+    }
+
+    .floating-flour-button {
+      top: 231px;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
     @media (max-width: 768px) {
-
-      body { background-size: 100%; }
+      body {
+        background-size: 100%;
+      }
 
       .page-content {
+        margin: 0 auto 10px auto;
         padding: 0 16px;
+      }
+
+      .hero-image {
+        margin-top: 0;
+        margin-bottom: 6px;
       }
 
       .hero-image img {
         width: 110%;
         max-width: none;
+        height: auto;
+        display: block;
+        margin: 0;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
       }
 
+      h1 {
+        font-size: 36px;
+      }
+
+      .intro {
+        font-size: 18px;
+        line-height: 1.55;
+        margin-bottom: 26px;
+      }
+
       .product-grid {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding-bottom: 50px;
+        padding: 0 0 50px 0;
       }
 
-      /* ✅ PERFECT ALIGNMENT WITH OTHER PAGES */
+      .product-card img {
+        max-width: 280px;
+      }
+
+      .product-card h2 {
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 18px;
+      }
 
       .floating-cart-button {
         top: 38px;
@@ -170,86 +289,255 @@
         width: 72px;
       }
 
+      .cart-count {
+        top: -4px;
+        right: 61px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 11px;
+        line-height: 13px;
+      }
+
+
       .floating-shop-link {
         right: 12px;
         width: 60px;
       }
 
-      .floating-wheat-button { top: 66px; }
-      .floating-flour-button { top: 102px; }
+      .floating-wheat-button {
+        top: 66px;
+      }
+
+      .floating-flour-button {
+        top: 102px;
+      }
+
+      /* Mobile-only correction: keep the baked-goods navigation cluster
+         aligned with the wheat and flour pages. */
+      .floating-home-button {
+        right: 10px !important;
+      }
+
+      .floating-cart-button {
+        right: 13px !important;
+      }
+
+      .floating-shop-link {
+        right: 19px !important;
+      }
     }
 
-    /* LANDSCAPE FIX */
+
+    /* Landscape mobile safeguard: prevents the browser from loading this page slightly zoomed-in
+       when opened from the homepage while the phone is already sideways. */
     @media (max-width: 932px) and (max-height: 500px) and (orientation: landscape) {
       .hero-image img {
         width: 100%;
         max-width: 650px;
+        height: auto;
+        display: block;
         margin: 0 auto;
         position: static;
+        left: auto;
         transform: none;
       }
     }
-
   </style>
 </head>
-
 <body>
+  <div class="page-content">
 
-<div class="page-content">
-
-  <div class="hero-image">
-    <img src="why-wheat-bg.png?v=2">
-  </div>
-
-  <h1>Shop Baked Goods</h1>
-
-  <p class="intro">
-    Fresh baked sourdough and artisan goods, crafted from whole stone-milled flour.
-  </p>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="hard-red-spring-wheat.jpg">
-      <h2>Sourdough Loaf</h2>
-      <p class="price">$12.00</p>
-      <p class="description">Our classic sourdough.</p>
-
-      <div class="product-option-control">
-        <label>Type:</label>
-        <select>
-          <option>Traditional</option>
-          <option>Seasoned</option>
-        </select>
-      </div>
-
-      <div class="quantity-control">
-        <label>Qty:</label>
-        <input type="number" value="1">
-      </div>
-
-      <button class="add-to-cart-button">Add to Cart</button>
+    <!-- HERO IMAGE -->
+    <div class="hero-image">
+      <img src="why-wheat-bg.png?v=2" alt="Shop Wheat">
     </div>
 
+    <h1>Shop Baked Goods</h1>
+
+    <p class="intro">
+      Fresh baked sourdough and artisan goods, from heritage loaves to ciabatta rolls, crafted from whole stone-milled flour for depth of flavor and true nourishment.
+    </p>
+
+    <div class="product-grid">
+
+      <!-- (all your product cards unchanged) -->
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Sourdough Loaf">
+        <h2>Sourdough Loaf</h2>
+        <p class="price">$12.00</p>
+        <p class="description">Our classic sourdough combines characteristics of Hard Red, White Sonoran, and Rouge Bordeaux, brought to life with our 700 year old Dutch sourdough starter.</p>
+
+        <div class="product-option-control">
+          <label for="sourdough-loaf-type">Type:</label>
+          <select id="sourdough-loaf-type">
+            <option value="Traditional" data-price="12.00">Traditional - $12.00</option>
+            <option value="Seasoned and Egg Washed" data-price="12.00">Seasoned and Egg Washed - $12.00</option>
+          </select>
+        </div>
+
+        <div class="quantity-control">
+          <label for="sourdough-loaf-quantity">Qty:</label>
+          <input id="sourdough-loaf-quantity" type="number" min="1" value="1">
+        </div>
+
+        <button
+          class="add-to-cart-button"
+          data-product-id="sourdough-loaf"
+          data-product-name="Sourdough Loaf"
+        >
+          Add to Cart
+        </button>
+
+        <p id="sourdough-loaf-cart-message" class="add-to-cart-message" aria-live="polite"></p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Kamut Wheat">
+        <h2>Kamut</h2>
+        <p class="price">$0.00</p>
+        <p class="description">An ancient grain with a rich golden color, buttery flavor, and satisfying depth.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="White Sonoran Wheat">
+        <h2>White Sonoran</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A heritage Arizona wheat known for its mild flavor, soft texture, and beautiful versatility.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Spelt Wheat">
+        <h2>Spelt</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A traditional grain with a lightly sweet, nutty character and tender baking qualities.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Emmer Wheat">
+        <h2>Emmer</h2>
+        <p class="price">$0.00</p>
+        <p class="description">An ancient wheat with earthy flavor, rustic character, and deep old-world appeal.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Heirloom Soft White Wheat">
+        <h2>Heirloom Soft White</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A gentler wheat berry ideal for pastries, flatbreads, lighter loaves, and everyday baking.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Durum Wheat">
+        <h2>Durum</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A hard golden wheat traditionally prized for pasta, rustic breads, and rich color.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Einkorn Wheat">
+        <h2>Einkorn</h2>
+        <p class="price">$0.00</p>
+        <p class="description">One of the oldest cultivated wheats, with a delicate flavor and naturally distinct character.</p>
+      </div>
+
+      <div class="product-card">
+        <img src="hard-red-spring-wheat.jpg" alt="Rouge Bordeaux Wheat">
+        <h2>Rouge Bordeaux</h2>
+        <p class="price">$0.00</p>
+        <p class="description">A flavorful heritage wheat with depth, warmth, and a beautiful rustic baking profile.</p>
+      </div>
+
+    </div>
   </div>
 
-</div>
+  <a href="/" class="floating-home-button" aria-label="Return to homepage">
+    <img src="Home-Button-001.png?v=3" alt="Home" class="floating-home-button-image" />
+  </a>
 
-<a href="/" class="floating-home-button">
-  <img src="Home-Button-001.png?v=3" class="floating-home-button-image">
-</a>
+  <a href="cart.html" class="floating-cart-button" aria-label="View cart">
+    <img src="cart-button.png?v=2" alt="Cart" class="floating-cart-button-image">
+    <span id="cart-count" class="cart-count">0</span>
+  </a>
 
-<a href="cart.html" class="floating-cart-button">
-  <img src="cart-button.png?v=2">
-</a>
 
-<a href="shop-wheat.html" class="floating-shop-link floating-wheat-button">
-  <img src="wheat-button.png?v=2">
-</a>
+  <a href="shop-wheat.html" class="floating-shop-link floating-wheat-button" aria-label="Go to Shop Wheat">
+    <img src="wheat-button.png?v=2" alt="Shop Wheat">
+  </a>
 
-<a href="shop-flour.html" class="floating-shop-link floating-flour-button">
-  <img src="flour-button.png?v=2">
-</a>
+  <a href="shop-flour.html" class="floating-shop-link floating-flour-button" aria-label="Go to Shop Flour">
+    <img src="flour-button.png?v=2" alt="Shop Flour">
+  </a>
+
+  <script>
+    const sourdoughLoafButton = document.querySelector('[data-product-id="sourdough-loaf"]');
+    const sourdoughLoafType = document.getElementById('sourdough-loaf-type');
+    const sourdoughLoafQuantity = document.getElementById('sourdough-loaf-quantity');
+    const sourdoughLoafMessage = document.getElementById('sourdough-loaf-cart-message');
+    const cartCount = document.getElementById('cart-count');
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      let totalItems = 0;
+
+      cart.forEach(function (item) {
+        totalItems += item.quantity;
+      });
+
+      cartCount.textContent = totalItems;
+
+      if (totalItems > 0) {
+        cartCount.style.display = 'block';
+      } else {
+        cartCount.style.display = 'none';
+      }
+    }
+
+    sourdoughLoafButton.addEventListener('click', function () {
+      const selectedOption = sourdoughLoafType.options[sourdoughLoafType.selectedIndex];
+
+      const productBaseId = sourdoughLoafButton.dataset.productId;
+      const productName = sourdoughLoafButton.dataset.productName;
+      const productType = selectedOption.value;
+      const productPrice = parseFloat(selectedOption.dataset.price);
+      const quantity = parseInt(sourdoughLoafQuantity.value, 10);
+
+      if (!quantity || quantity < 1) {
+        sourdoughLoafMessage.textContent = 'Please select a quantity of at least 1.';
+        return;
+      }
+
+      const cartItemId = productBaseId + '-' + productType.replace(/\s+/g, '-').toLowerCase();
+
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      const existingItem = cart.find(function (item) {
+        return item.id === cartItemId;
+      });
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          id: cartItemId,
+          name: productName,
+          size: productType,
+          price: productPrice,
+          quantity: quantity
+        });
+      }
+
+      localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
+
+      sourdoughLoafMessage.textContent = quantity + ' x ' + productName + ' (' + productType + ') added to cart.';
+      sourdoughLoafQuantity.value = 1;
+
+      updateCartCount();
+    });
+
+    updateCartCount();
+  </script>
 
 </body>
 </html>
