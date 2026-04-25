@@ -219,7 +219,10 @@
 
     <h2>Order Request</h2>
 
-    <form id="order-request-form" class="order-form">
+    <form id="order-request-form" class="order-form" action="https://api.staticforms.xyz/submit" method="POST">
+      <input type="hidden" name="accessKey" value="sf_89c447b418c7e6e6283f4104">
+      <input type="hidden" name="subject" value="New Bread of Life Mills Order Request">
+
       <div class="form-field">
         <label for="customer-name">Name *</label>
         <input id="customer-name" name="name" type="text" required>
@@ -375,11 +378,10 @@
     });
 
     orderForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-
       const cart = getCart();
 
       if (cart.length === 0) {
+        event.preventDefault();
         formMessage.textContent = 'Your cart is empty.';
         return;
       }
@@ -390,7 +392,7 @@
       orderSummaryPreview.textContent = orderSummary;
       orderSummaryPreview.style.display = 'block';
 
-      formMessage.textContent = 'Test mode: order summary generated successfully. StaticForms is not connected yet.';
+      formMessage.textContent = 'Submitting your order request...';
     });
 
     renderCart();
