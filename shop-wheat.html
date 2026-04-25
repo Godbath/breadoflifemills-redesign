@@ -192,6 +192,31 @@
       display: none;
     }
 
+    .floating-shop-link {
+      position: fixed;
+      right: 38px;
+      z-index: 9998;
+      display: inline-block;
+      width: 150px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .floating-shop-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .floating-flour-button {
+      top: 228px;
+    }
+
+    .floating-baked-goods-button {
+      top: 335px;
+    }
+
     @media (max-width: 900px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -269,6 +294,19 @@
         height: 18px;
         font-size: 11px;
         line-height: 13px;
+      }
+
+      .floating-shop-link {
+        right: 12px;
+        width: 60px;
+      }
+
+      .floating-flour-button {
+        top: 95px;
+      }
+
+      .floating-baked-goods-button {
+        top: 140px;
       }
     }
   </style>
@@ -384,6 +422,14 @@
   <a href="cart.html" class="floating-cart-button" aria-label="View cart">
     <img src="cart-button.png" alt="Cart" class="floating-cart-button-image">
     <span id="cart-count" class="cart-count">0</span>
+  </a>
+
+  <a href="shop-flour.html" class="floating-shop-link floating-flour-button" aria-label="Go to Shop Flour">
+    <img src="flour-button.png" alt="Shop Flour">
+  </a>
+
+  <a href="shop-baked-goods.html" class="floating-shop-link floating-baked-goods-button" aria-label="Go to Shop Baked Goods">
+    <img src="baked-goods-button.png" alt="Shop Baked Goods">
   </a>
 
   <script>
