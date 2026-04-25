@@ -155,6 +155,23 @@
       min-height: 20px;
     }
 
+    .floating-cart-button {
+      position: fixed;
+      top: 92px;
+      right: 18px;
+      z-index: 9999;
+      display: inline-block;
+      padding: 8px 13px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #5a3f2a;
+      background: rgba(255, 248, 220, 0.9);
+      border: 2px solid #5a3f2a;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
     @media (max-width: 900px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -217,6 +234,13 @@
 
       .description {
         font-size: 18px;
+      }
+
+      .floating-cart-button {
+        top: 82px;
+        right: 12px;
+        font-size: 15px;
+        padding: 7px 11px;
       }
     }
   </style>
@@ -330,6 +354,10 @@
 
   <a href="/" class="floating-home-button" aria-label="Return to homepage">
     <img src="Home-Button-001.png?v=3" alt="Home" class="floating-home-button-image" />
+  </a>
+
+  <a href="cart.html" class="floating-cart-button" aria-label="View cart">
+    Cart
   </a>
 
   <script>
