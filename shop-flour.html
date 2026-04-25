@@ -192,6 +192,31 @@
       display: none;
     }
 
+    .floating-shop-link {
+      position: fixed;
+      right: 38px;
+      z-index: 9998;
+      display: inline-block;
+      width: 150px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .floating-shop-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .floating-wheat-button {
+      top: 152px;
+    }
+
+    .floating-baked-goods-button {
+      top: 236px;
+    }
+
     @media (max-width: 900px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -269,6 +294,19 @@
         height: 18px;
         font-size: 11px;
         line-height: 13px;
+      }
+
+      .floating-shop-link {
+        right: 12px;
+        width: 60px;
+      }
+
+      .floating-wheat-button {
+        top: 95px;
+      }
+
+      .floating-baked-goods-button {
+        top: 140px;
       }
     }
   </style>
@@ -382,8 +420,16 @@
   </a>
 
   <a href="cart.html" class="floating-cart-button" aria-label="View cart">
-    <img src="cart-button.png" alt="Cart" class="floating-cart-button-image">
+    <img src="cart-button.png?v=2" alt="Cart" class="floating-cart-button-image">
     <span id="cart-count" class="cart-count">0</span>
+  </a>
+
+  <a href="shop-wheat.html" class="floating-shop-link floating-wheat-button" aria-label="Go to Shop Wheat">
+    <img src="wheat-button.png?v=2" alt="Shop Wheat">
+  </a>
+
+  <a href="shop-baked-goods.html" class="floating-shop-link floating-baked-goods-button" aria-label="Go to Shop Baked Goods">
+    <img src="baked-goods-button.png?v=2" alt="Shop Baked Goods">
   </a>
 
   <script>
