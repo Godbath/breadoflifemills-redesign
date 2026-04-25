@@ -161,15 +161,36 @@
       right: 18px;
       z-index: 9999;
       display: inline-block;
-      padding: 8px 13px;
-      font-family: 'DejaVu Serif', serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: #5a3f2a;
-      background: rgba(255, 248, 220, 0.9);
-      border: 2px solid #5a3f2a;
+      width: 75px;
+      height: auto;
       text-decoration: none;
       box-sizing: border-box;
+    }
+
+    .floating-cart-button-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      min-width: 19px;
+      height: 19px;
+      padding: 2px 5px;
+      box-sizing: border-box;
+      border-radius: 999px;
+      background: #5a3f2a;
+      color: #fff8dc;
+      border: 2px solid #fff8dc;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14px;
+      text-align: center;
+      display: none;
     }
 
     @media (max-width: 900px) {
@@ -239,8 +260,16 @@
       .floating-cart-button {
         top: 82px;
         right: 12px;
-        font-size: 15px;
-        padding: 7px 11px;
+        width: 68px;
+      }
+
+      .cart-count {
+        top: -4px;
+        right: -4px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 11px;
+        line-height: 13px;
       }
     }
   </style>
@@ -357,7 +386,8 @@
   </a>
 
   <a href="cart.html" class="floating-cart-button" aria-label="View cart">
-    Cart
+    <img src="cart-button.png" alt="Cart" class="floating-cart-button-image">
+    <span id="cart-count" class="cart-count">0</span>
   </a>
 
   <script>
@@ -365,6 +395,25 @@
     const hardRedSize = document.getElementById('hard-red-size');
     const hardRedQuantity = document.getElementById('hard-red-quantity');
     const hardRedMessage = document.getElementById('hard-red-cart-message');
+    const cartCount = document.getElementById('cart-count');
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      let totalItems = 0;
+
+      cart.forEach(function (item) {
+        totalItems += item.quantity;
+      });
+
+      cartCount.textContent = totalItems;
+
+      if (totalItems > 0) {
+        cartCount.style.display = 'block';
+      } else {
+        cartCount.style.display = 'none';
+      }
+    }
 
     hardRedButton.addEventListener('click', function () {
       const selectedOption = hardRedSize.options[hardRedSize.selectedIndex];
@@ -404,7 +453,11 @@
 
       hardRedMessage.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
       hardRedQuantity.value = 1;
+
+      updateCartCount();
     });
+
+    updateCartCount();
   </script>
 
 </body>
