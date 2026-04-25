@@ -1,12 +1,28 @@
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   background: #f3e2d1;
   overflow-x: hidden;
   font-family: Georgia, serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
 }
 
 .mockup-page {
@@ -274,6 +290,8 @@ body {
 /* Subpages */
 .subpage-body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   background: #f3e2d1;
   overflow-x: hidden;
   font-family: Georgia, serif;
@@ -293,5 +311,4 @@ body {
   display: block;
   width: 100%;
   height: auto;
-}
 }
