@@ -11,15 +11,12 @@
     @font-face {
       font-family: 'DejaVu Serif';
       src: url('DejaVuSerif.woff2?v=2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
     }
 
     @font-face {
       font-family: 'DejaVu Serif';
       src: url('DejaVuSerif-Bold.woff2') format('woff2');
       font-weight: 700;
-      font-style: normal;
     }
 
     body {
@@ -27,31 +24,21 @@
       padding: 0;
       background-image: url('parchment_tile.jpg');
       background-repeat: repeat;
-      background-position: top left;
       background-size: 50%;
       font-family: 'DejaVu Serif', serif;
       color: #5a3f2a;
-      overflow-x: hidden;
     }
 
     .page-content {
       max-width: 900px;
       margin: 0 auto;
       padding: 40px 22px 80px 22px;
-      box-sizing: border-box;
     }
 
     h1 {
       text-align: center;
       font-size: 46px;
-      margin: 0 0 28px 0;
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin: 36px 0 12px 0;
-      text-align: center;
+      margin-bottom: 28px;
     }
 
     .cart-item {
@@ -62,13 +49,25 @@
     .cart-item h2 {
       margin: 0 0 8px 0;
       font-size: 25px;
-      text-align: left;
     }
 
     .cart-item p {
       margin: 4px 0;
       font-size: 18px;
       font-weight: 600;
+    }
+
+    /* 🔥 REMOVE BUTTON FIX */
+    .remove-item-button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #5a3f2a;
+      background: rgba(255, 248, 220, 0.85);
+      border: 2px solid #5a3f2a;
+      cursor: pointer;
     }
 
     .cart-totals {
@@ -79,14 +78,9 @@
       font-weight: 700;
     }
 
-    .cart-totals p {
-      margin: 8px 0;
-    }
-
     .cart-empty {
       text-align: center;
       font-size: 22px;
-      font-weight: 700;
       margin-top: 40px;
     }
 
@@ -96,346 +90,106 @@
     }
 
     .cart-button {
-      display: inline-block;
       margin: 8px;
       padding: 10px 18px;
-      font-family: 'DejaVu Serif', serif;
       font-size: 17px;
       font-weight: 700;
       color: #5a3f2a;
       background: rgba(255, 248, 220, 0.85);
       border: 2px solid #5a3f2a;
-      text-decoration: none;
       cursor: pointer;
-    }
-
-    .remove-item-wrap {
-      margin-top: 12px;
-      text-align: center;
-    }
-
-    .remove-item-button {
-      display: inline-block;
-      padding: 7px 14px;
-      font-family: 'DejaVu Serif', serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: #5a3f2a;
-      background: rgba(255, 248, 220, 0.85);
-      border: 2px solid #5a3f2a;
-      cursor: pointer;
-    }
-
-    .order-note {
-      max-width: 760px;
-      margin: 34px auto 22px auto;
-      font-size: 18px;
-      line-height: 1.55;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .order-form {
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .form-field {
-      margin-bottom: 16px;
-    }
-
-    .form-field label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 9px;
-      font-family: 'DejaVu Serif', serif;
-      font-size: 16px;
-      color: #5a3f2a;
-      background: rgba(255, 248, 220, 0.85);
-      border: 2px solid rgba(90, 63, 42, 0.75);
-    }
-
-    .form-field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .order-summary-preview {
-      white-space: pre-wrap;
-      margin-top: 18px;
-      padding: 14px;
-      border: 2px solid rgba(90, 63, 42, 0.45);
-      background: rgba(255, 248, 220, 0.45);
-      font-size: 15px;
-      line-height: 1.45;
-      display: none;
-    }
-
-    .form-message {
-      margin-top: 14px;
-      text-align: center;
-      font-size: 17px;
-      font-weight: 700;
-      min-height: 22px;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        background-size: 100%;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      h2 {
-        font-size: 26px;
-      }
-
-      .cart-item h2 {
-        font-size: 23px;
-      }
-
-      .cart-item p,
-      .cart-totals {
-        font-size: 18px;
-      }
-
-      .order-note {
-        font-size: 17px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <div class="page-content">
-    <h1>Your Cart</h1>
+<div class="page-content">
+  <h1>Your Cart</h1>
 
-    <div id="cart-items"></div>
+  <div id="cart-items"></div>
 
-    <div id="cart-totals" class="cart-totals"></div>
+  <div id="cart-totals" class="cart-totals"></div>
 
-    <div class="cart-actions">
-      <a href="shop-wheat.html" class="cart-button">Continue Shopping</a>
-      <button id="clear-cart-button" class="cart-button">Clear Cart</button>
-    </div>
-
-    <p class="order-note">
-      We produce our wheat, flour, and baked goods in small batches with freshness as the priority. Because of this, submitted orders are treated as requests until confirmed. After receiving your order request, we will review availability, confirm pickup details, and contact you with any necessary adjustments before fulfillment.
-    </p>
-
-    <h2>Order Request</h2>
-
-    <form id="order-request-form" class="order-form" action="https://api.staticforms.xyz/submit" method="POST">
-      <input type="hidden" name="accessKey" value="sf_89c447b418c7e6e6283f4104">
-      <input type="hidden" name="subject" value="New Bread of Life Mills Order Request">
-
-      <!-- 🔥 THIS IS THE ONLY NEW LINE ADDED -->
-      <input type="hidden" name="redirectTo" value="https://breadoflifemills.com/thank-you.html">
-
-      <div class="form-field">
-        <label for="customer-name">Name *</label>
-        <input id="customer-name" name="name" type="text" required>
-      </div>
-
-      <div class="form-field">
-        <label for="customer-phone">Phone *</label>
-        <input id="customer-phone" name="phone" type="tel" required>
-      </div>
-
-      <div class="form-field">
-        <label for="customer-email">Email *</label>
-        <input id="customer-email" name="email" type="email" required>
-      </div>
-
-      <div class="form-field">
-        <label for="pickup-location">Preferred Pickup Location *</label>
-        <select id="pickup-location" name="pickupLocation" required>
-          <option value="">Select a pickup location</option>
-          <option value="Whetstone / Sierra Vista Area">Whetstone / Sierra Vista Area</option>
-          <option value="Benson Area">Benson Area</option>
-          <option value="Patagonia Area">Patagonia Area</option>
-          <option value="Tucson Area">Tucson Area</option>
-          <option value="Other / Please contact me">Other / Please contact me</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label for="customer-notes">Notes / Questions</label>
-        <textarea id="customer-notes" name="notes"></textarea>
-      </div>
-
-      <input id="order-summary-field" name="orderSummary" type="hidden">
-
-      <div class="cart-actions">
-        <button type="submit" class="cart-button">Complete Order Request</button>
-      </div>
-
-      <div id="order-summary-preview" class="order-summary-preview"></div>
-
-      <p id="form-message" class="form-message" aria-live="polite"></p>
-    </form>
+  <div class="cart-actions">
+    <a href="shop-wheat.html" class="cart-button">Continue Shopping</a>
+    <button id="clear-cart-button" class="cart-button">Clear Cart</button>
   </div>
+</div>
 
-  <script>
-    const salesTaxRate = 0.0855;
+<script>
+  const salesTaxRate = 0.0855;
 
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartTotalsContainer = document.getElementById('cart-totals');
-    const clearCartButton = document.getElementById('clear-cart-button');
-    const orderForm = document.getElementById('order-request-form');
-    const orderSummaryField = document.getElementById('order-summary-field');
-    const orderSummaryPreview = document.getElementById('order-summary-preview');
-    const formMessage = document.getElementById('form-message');
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotalsContainer = document.getElementById('cart-totals');
+  const clearCartButton = document.getElementById('clear-cart-button');
 
-    function formatCurrency(amount) {
-      return '$' + amount.toFixed(2);
-    }
+  function formatCurrency(amount) {
+    return '$' + amount.toFixed(2);
+  }
 
-    function getCart() {
-      return JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
-    }
+  function getCart() {
+    return JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+  }
 
-    function calculateCartTotals(cart) {
-      let subtotal = 0;
+  function saveCart(cart) {
+    localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
+  }
 
-      cart.forEach(function (item) {
-        subtotal += item.price * item.quantity;
-      });
-
-      const salesTax = subtotal * salesTaxRate;
-      const total = subtotal + salesTax;
-
-      return {
-        subtotal: subtotal,
-        salesTax: salesTax,
-        total: total
-      };
-    }
-
-    function buildOrderSummary() {
-      const cart = getCart();
-      const totals = calculateCartTotals(cart);
-
-      let summary = 'Bread of Life Mills Order Request\n\n';
-
-      cart.forEach(function (item) {
-        const itemSubtotal = item.price * item.quantity;
-
-        summary += item.name + '\n';
-        summary += 'Size: ' + item.size + '\n';
-        summary += 'Quantity: ' + item.quantity + '\n';
-        summary += 'Price Each: ' + formatCurrency(item.price) + '\n';
-        summary += 'Item Subtotal: ' + formatCurrency(itemSubtotal) + '\n\n';
-      });
-
-      summary += 'Subtotal: ' + formatCurrency(totals.subtotal) + '\n';
-      summary += 'Sales Tax: ' + formatCurrency(totals.salesTax) + '\n';
-      summary += 'Total: ' + formatCurrency(totals.total);
-
-      return summary;
-    }
-
-    function renderCart() {
-      const cart = getCart();
-
-      cartItemsContainer.innerHTML = '';
-      cartTotalsContainer.innerHTML = '';
-
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p class="cart-empty">Your cart is currently empty.</p>';
-        cartTotalsContainer.style.display = 'none';
-        orderForm.style.display = 'none';
-        return;
-      }
-
-      cartTotalsContainer.style.display = 'block';
-      orderForm.style.display = 'block';
-
-      let subtotal = 0;
-
-      cart.forEach(function (item) {
-        const itemSubtotal = item.price * item.quantity;
-        subtotal += itemSubtotal;
-
-        const itemElement = document.createElement('div');
-        itemElement.className = 'cart-item';
-
-        itemElement.innerHTML =
-          '<h2>' + item.name + '</h2>' +
-          '<p>Size: ' + item.size + '</p>' +
-          '<p>Quantity: ' + item.quantity + '</p>' +
-          '<p>Price Each: ' + formatCurrency(item.price) + '</p>' +
-          '<p>Item Subtotal: ' + formatCurrency(itemSubtotal) + '</p>' +
-          '<div class="remove-item-wrap">' +
-            '<button type="button" class="remove-item-button" data-remove-id="' + item.id + '">Remove Item</button>' +
-          '</div>';
-
-        cartItemsContainer.appendChild(itemElement);
-      });
-
-      const salesTax = subtotal * salesTaxRate;
-      const total = subtotal + salesTax;
-
-      cartTotalsContainer.innerHTML =
-        '<p>Subtotal: ' + formatCurrency(subtotal) + '</p>' +
-        '<p>Sales Tax: ' + formatCurrency(salesTax) + '</p>' +
-        '<p>Total: ' + formatCurrency(total) + '</p>';
-
-      orderSummaryField.value = buildOrderSummary();
-    }
-
-    clearCartButton.addEventListener('click', function () {
-      localStorage.removeItem('breadOfLifeCart');
-      renderCart();
-    });
-
-    cartItemsContainer.addEventListener('click', function (event) {
-      if (!event.target.classList.contains('remove-item-button')) {
-        return;
-      }
-
-      const itemIdToRemove = event.target.dataset.removeId;
-      const cart = getCart();
-
-      const updatedCart = cart.filter(function (item) {
-        return item.id !== itemIdToRemove;
-      });
-
-      localStorage.setItem('breadOfLifeCart', JSON.stringify(updatedCart));
-      renderCart();
-    });
-
-    orderForm.addEventListener('submit', function (event) {
-      const cart = getCart();
-
-      if (cart.length === 0) {
-        event.preventDefault();
-        formMessage.textContent = 'Your cart is empty.';
-        return;
-      }
-
-      const orderSummary = buildOrderSummary();
-
-      orderSummaryField.value = orderSummary;
-      orderSummaryPreview.textContent = orderSummary;
-      orderSummaryPreview.style.display = 'block';
-
-      formMessage.textContent = 'Submitting your order request...';
-    });
-
+  function removeItem(itemId) {
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== itemId);
+    saveCart(cart);
     renderCart();
-  </script>
+  }
+
+  function renderCart() {
+    const cart = getCart();
+
+    cartItemsContainer.innerHTML = '';
+    cartTotalsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p class="cart-empty">Your cart is currently empty.</p>';
+      cartTotalsContainer.style.display = 'none';
+      return;
+    }
+
+    let subtotal = 0;
+
+    cart.forEach(function (item) {
+      const itemSubtotal = item.price * item.quantity;
+      subtotal += itemSubtotal;
+
+      const itemElement = document.createElement('div');
+      itemElement.className = 'cart-item';
+
+      itemElement.innerHTML =
+        '<h2>' + item.name + '</h2>' +
+        '<p>Size: ' + item.size + '</p>' +
+        '<p>Quantity: ' + item.quantity + '</p>' +
+        '<p>Price Each: ' + formatCurrency(item.price) + '</p>' +
+        '<p>Item Subtotal: ' + formatCurrency(itemSubtotal) + '</p>' +
+        '<button class="remove-item-button" onclick="removeItem(\'' + item.id + '\')">Remove Item</button>';
+
+      cartItemsContainer.appendChild(itemElement);
+    });
+
+    const salesTax = subtotal * salesTaxRate;
+    const total = subtotal + salesTax;
+
+    cartTotalsContainer.innerHTML =
+      '<p>Subtotal: ' + formatCurrency(subtotal) + '</p>' +
+      '<p>Sales Tax: ' + formatCurrency(salesTax) + '</p>' +
+      '<p>Total: ' + formatCurrency(total) + '</p>';
+  }
+
+  clearCartButton.addEventListener('click', function () {
+    localStorage.removeItem('breadOfLifeCart');
+    renderCart();
+  });
+
+  renderCart();
+</script>
 
 </body>
 </html>
