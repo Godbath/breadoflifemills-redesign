@@ -332,16 +332,29 @@
     }
 
     function generateOrderNumber() {
-      const now = new Date();
-      const year = String(now.getFullYear());
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const day = String(now.getDate()).padStart(2, '0');
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const randomPart = Math.floor(1000 + Math.random() * 9000);
+      const counterKey = 'breadOfLifeOrderCounter';
+      let counter = parseInt(localStorage.getItem(counterKey), 10);
 
-      return 'BOLM-' + year + month + day + '-' + hours + minutes + seconds + '-' + randomPart;
+      if (!counter || counter < 100000 || counter > 999999) {
+        counter = Math.floor(100000 + Math.random() * 900000);
+      } else {
+        counter += 1;
+      }
+
+      if (counter > 999999) {
+        counter = 100000;
+      }
+
+      localStorage.setItem(counterKey, counter);
+
+      const suffixCharacters = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let suffix = '';
+
+      for (let i = 0; i < 2; i += 1) {
+        suffix += suffixCharacters.charAt(Math.floor(Math.random() * suffixCharacters.length));
+      }
+
+      return 'BOL-' + counter + '-' + suffix;
     }
 
     function getCustomerData() {
