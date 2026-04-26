@@ -78,8 +78,17 @@
       user-select: none;
     }
 
+    .dropdown-hover-zone {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 290px;
+      height: 100%;
+      z-index: 75;
+    }
+
     .process-menu-wrap:hover .process-dropdown,
-    .process-dropdown:hover {
+    .dropdown-hover-zone:hover .process-dropdown {
       display: block;
     }
 
@@ -238,6 +247,11 @@
         min-width: 0;
       }
 
+      .dropdown-hover-zone {
+        width: 120px;
+        height: 100%;
+      }
+
       .story-menu-wrap {
         left: 53.5%;
         transform: translateX(-106px);
@@ -331,6 +345,11 @@
         min-width: 0;
       }
 
+      .dropdown-hover-zone {
+        width: 210px;
+        height: 100%;
+      }
+
       .story-menu-wrap {
         left: 54.8%;
         transform: translateX(-220px);
@@ -420,7 +439,8 @@
     .anchor-target,
     .process-menu-wrap,
     .process-dropdown-link,
-    .products-dropdown-link {
+    .products-dropdown-link,
+    .dropdown-hover-zone {
       outline: 2px solid rgba(255, 0, 0, 0.9) !important;
       background: rgba(255, 0, 0, 0.22) !important;
     }
@@ -461,6 +481,11 @@
       background: rgba(0, 255, 255, 0.28) !important;
     }
 
+    .dropdown-hover-zone {
+      outline: 2px dashed rgba(0, 180, 255, 0.95) !important;
+      background: rgba(0, 180, 255, 0.14) !important;
+    }
+
     .process-dropdown {
       display: block !important;
       outline: 2px dashed rgba(0, 0, 255, 0.9) !important;
@@ -489,34 +514,40 @@
       <div class="process-menu-wrap story-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Our Story menu"></a>
 
-        <div class="process-dropdown">
-          <img src="Our-Story-menu-001.png?v=2" alt="Our Story dropdown menu" class="process-dropdown-image"/>
+        <div class="dropdown-hover-zone">
+          <div class="process-dropdown">
+            <img src="Our-Story-menu-001.png?v=2" alt="Our Story dropdown menu" class="process-dropdown-image"/>
 
-          <a href="our-story.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Story page"></a>
-          <a href="why-wheat.html" class="process-dropdown-link process-care-link" aria-label="Go to Why Whole Wheat page"></a>
+            <a href="our-story.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Story page"></a>
+            <a href="why-wheat.html" class="process-dropdown-link process-care-link" aria-label="Go to Why Whole Wheat page"></a>
+          </div>
         </div>
       </div>
 
       <div class="process-menu-wrap products-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Products menu"></a>
 
-        <div class="process-dropdown">
-          <img src="Products-menu.png?v=2" alt="Products dropdown menu" class="process-dropdown-image"/>
+        <div class="dropdown-hover-zone">
+          <div class="process-dropdown">
+            <img src="Products-menu.png?v=2" alt="Products dropdown menu" class="process-dropdown-image"/>
 
-          <a href="shop-wheat.html" class="products-dropdown-link products-wheat-link" aria-label="Go to Shop Wheat page"></a>
-          <a href="shop-flour.html" class="products-dropdown-link products-flour-link" aria-label="Go to Shop Flour page"></a>
-          <a href="shop-baked-goods.html" class="products-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
+            <a href="shop-wheat.html" class="products-dropdown-link products-wheat-link" aria-label="Go to Shop Wheat page"></a>
+            <a href="shop-flour.html" class="products-dropdown-link products-flour-link" aria-label="Go to Shop Flour page"></a>
+            <a href="shop-baked-goods.html" class="products-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
+          </div>
         </div>
       </div>
 
       <div class="process-menu-wrap main-process-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Process menu"></a>
 
-        <div class="process-dropdown">
-          <img src="Process-Dropdown-001.png" alt="Process dropdown menu" class="process-dropdown-image"/>
+        <div class="dropdown-hover-zone">
+          <div class="process-dropdown">
+            <img src="Process-Dropdown-001.png" alt="Process dropdown menu" class="process-dropdown-image"/>
 
-          <a href="our-method.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Method page"></a>
-          <a href="care.html" class="process-dropdown-link process-care-link" aria-label="Go to Care page"></a>
+            <a href="our-method.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Method page"></a>
+            <a href="care.html" class="process-dropdown-link process-care-link" aria-label="Go to Care page"></a>
+          </div>
         </div>
       </div>
 
