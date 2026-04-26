@@ -35,7 +35,7 @@
     }
 
     .page-content {
-      max-width: 760px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 80px 20px;
       text-align: center;
@@ -44,7 +44,7 @@
 
     h1 {
       font-size: 44px;
-      margin-bottom: 18px;
+      margin: 0 0 18px 0;
       font-weight: 700;
       letter-spacing: 0.5px;
     }
@@ -58,6 +58,42 @@
 
     .highlight {
       font-weight: 700;
+    }
+
+    .receipt-panel {
+      display: none;
+      margin: 34px auto 0 auto;
+      padding: 20px;
+      max-width: 760px;
+      border: 2px solid rgba(90, 63, 42, 0.55);
+      background: rgba(255, 248, 220, 0.50);
+      text-align: left;
+      box-sizing: border-box;
+    }
+
+    .receipt-panel h2 {
+      margin: 0 0 14px 0;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .receipt-text {
+      white-space: pre-wrap;
+      margin: 0;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 600;
+      color: #5a3f2a;
+    }
+
+    .receipt-empty-note {
+      display: none;
+      margin-top: 28px;
+      font-size: 17px;
+      line-height: 1.55;
+      font-weight: 600;
     }
 
     .button-group {
@@ -75,11 +111,16 @@
       background: rgba(255, 248, 220, 0.85);
       border: 2px solid #5a3f2a;
       text-decoration: none;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
       body {
         background-size: 100%;
+      }
+
+      .page-content {
+        padding: 58px 18px;
       }
 
       h1 {
@@ -88,6 +129,18 @@
 
       p {
         font-size: 18px;
+      }
+
+      .receipt-panel {
+        padding: 16px;
+      }
+
+      .receipt-panel h2 {
+        font-size: 25px;
+      }
+
+      .receipt-text {
+        font-size: 15px;
       }
     }
   </style>
@@ -107,11 +160,82 @@
       We will contact you shortly to confirm availability and pickup details.
     </p>
 
+    <div id="receipt-panel" class="receipt-panel">
+      <h2>Order Request Receipt</h2>
+      <pre id="receipt-text" class="receipt-text"></pre>
+    </div>
+
+    <p id="receipt-empty-note" class="receipt-empty-note">
+      Receipt details are only shown immediately after submitting an order request from this browser tab.
+    </p>
+
     <div class="button-group">
+      <button id="download-receipt-button" type="button" class="button" style="display: none;">Download Receipt</button>
       <a href="shop-wheat.html" class="button">Continue Shopping</a>
       <a href="/" class="button">Return Home</a>
     </div>
   </div>
+
+  <script>
+    const receiptPanel = document.getElementById('receipt-panel');
+    const receiptTextElement = document.getElementById('receipt-text');
+    const receiptEmptyNote = document.getElementById('receipt-empty-note');
+    const downloadReceiptButton = document.getElementById('download-receipt-button');
+
+    function safeFileName(value) {
+      return String(value || 'Bread-of-Life-Mills-Receipt').replace(/[^a-z0-9-_]/gi, '-');
+    }
+
+    function downloadReceipt(receiptData) {
+      const receiptText = receiptData.receiptText || receiptTextElement.textContent;
+      const blob = new Blob([receiptText], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+
+      link.href = url;
+      link.download = safeFileName(receiptData.orderNumber) + '.txt';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    function renderReceipt() {
+      const storedReceipt = sessionStorage.getItem('breadOfLifeLastReceipt');
+
+      if (!storedReceipt) {
+        receiptEmptyNote.style.display = 'block';
+        localStorage.removeItem('breadOfLifeCart');
+        return;
+      }
+
+      try {
+        const receiptData = JSON.parse(storedReceipt);
+        const receiptText = receiptData.receiptText || '';
+
+        if (!receiptText) {
+          receiptEmptyNote.style.display = 'block';
+          localStorage.removeItem('breadOfLifeCart');
+          return;
+        }
+
+        receiptTextElement.textContent = receiptText;
+        receiptPanel.style.display = 'block';
+        downloadReceiptButton.style.display = 'inline-block';
+
+        downloadReceiptButton.addEventListener('click', function () {
+          downloadReceipt(receiptData);
+        });
+
+        localStorage.removeItem('breadOfLifeCart');
+      } catch (error) {
+        receiptEmptyNote.style.display = 'block';
+        localStorage.removeItem('breadOfLifeCart');
+      }
+    }
+
+    renderReceipt();
+  </script>
 
 </body>
 </html>
