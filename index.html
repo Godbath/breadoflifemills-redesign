@@ -7,9 +7,12 @@
   <link rel="icon" href="favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="512x512" href="breadoflifemills-favicon-b.png?v=4">
   <link rel="apple-touch-icon" href="breadoflifemills-favicon-b.png?v=4">
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 
   <style>
+    /* Page-specific dropdown alignment controls.
+       These rules load after styles.css and intentionally override the shared defaults. */
+
     .story-menu-wrap {
       transform: translateX(-400px);
     }
@@ -22,24 +25,38 @@
       transform: translateX(-128px) translateY(26px);
     }
 
+    /* Independent correction for the Our Story dropdown image. */
+    .story-menu-wrap .process-dropdown {
+      transform: translateX(calc(-50% - 100px));
+    }
 
+    /* Independent correction for the Process dropdown image. */
+    .main-process-menu-wrap .process-dropdown {
+      transform: translateX(calc(-50% - 100px));
+    }
+
+    /* Products dropdown targets are now positioned with explicit top values
+       instead of relying on transform-only offsets. */
     .products-menu-wrap .products-dropdown-link {
       position: absolute;
-      width: 25%;
-      height: 13px;
+      left: 34%;
+      width: 32%;
+      height: 10%;
+      display: block;
+      z-index: 80;
+      transform: none;
     }
 
     .products-wheat-link {
-      transform: translateX(97px) translateY(-105px);
+      top: 44%;
     }
 
     .products-flour-link {
-      transform: translateX(97px) translateY(-83px);
+      top: 57%;
     }
 
     .products-baked-link {
-      top: calc(100% + 156px);
-      transform: translateX(97px) translateY(-218px);
+      top: 70%;
     }
 
     @media (max-width: 768px) {
@@ -55,23 +72,31 @@
         transform: translateX(-80px) translateY(10px);
       }
 
-      /* ✅ ADDED: Mobile-only scaling (~8% smaller) */
+      .story-menu-wrap .process-dropdown {
+        transform: translateX(calc(-50% - 24px));
+      }
+
+      .main-process-menu-wrap .process-dropdown {
+        transform: translateX(calc(-50% - 24px));
+      }
+
       .products-menu-wrap .products-dropdown-link {
-        width: 23%;
-        height: 6px;
+        left: 34%;
+        width: 32%;
+        height: 10%;
+        transform: none;
       }
 
       .products-wheat-link {
-        transform: translateX(65px) translateY(-70px);
+        top: 44%;
       }
 
       .products-flour-link {
-        transform: translateX(65px) translateY(-54px);
+        top: 57%;
       }
 
       .products-baked-link {
-        top: calc(100% + 156px);
-        transform: translateX(65px) translateY(-196px);
+        top: 70%;
       }
     }
 
@@ -88,23 +113,31 @@
         transform: translateX(-109px) translateY(15px);
       }
 
-      /* ✅ ADDED: Same scaling for landscape */
+      .story-menu-wrap .process-dropdown {
+        transform: translateX(calc(-50% - 52px));
+      }
+
+      .main-process-menu-wrap .process-dropdown {
+        transform: translateX(calc(-50% - 52px));
+      }
+
       .products-menu-wrap .products-dropdown-link {
-        width: 23%;
-        height: 8px;
+        left: 34%;
+        width: 32%;
+        height: 10%;
+        transform: none;
       }
 
       .products-wheat-link {
-        transform: translateX(91px) translateY(-97px);
+        top: 44%;
       }
 
       .products-flour-link {
-        transform: translateX(91px) translateY(-75px);
+        top: 57%;
       }
 
       .products-baked-link {
-        top: calc(100% + 156px);
-        transform: translateX(91px) translateY(-210px);
+        top: 70%;
       }
     }
   </style>
@@ -149,7 +182,7 @@
         </div>
       </div>
 
-      <div class="process-menu-wrap">
+      <div class="process-menu-wrap main-process-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Process menu"></a>
 
         <div class="process-dropdown">
