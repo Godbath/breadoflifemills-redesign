@@ -350,11 +350,11 @@
       const suffixCharacters = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
       let suffix = '';
 
-      for (let i = 0; i < 2; i += 1) {
+      for (let i = 0; i < 3; i += 1) {
         suffix += suffixCharacters.charAt(Math.floor(Math.random() * suffixCharacters.length));
       }
 
-      return 'BOL-' + counter + '-' + suffix;
+      return counter + '-' + suffix;
     }
 
     function getCustomerData() {
