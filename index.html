@@ -64,10 +64,21 @@
     .process-dropdown {
       position: absolute;
       display: none;
-      width: 340px;
+      width: 290px;
+      height: 220px;
       max-width: none;
       min-width: 0;
+      overflow: visible;
       z-index: 70;
+    }
+
+    .dropdown-visual {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 340px;
+      height: auto;
+      pointer-events: none;
     }
 
     .process-dropdown-image {
@@ -78,17 +89,12 @@
       user-select: none;
     }
 
-    .dropdown-hover-zone {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 290px;
-      height: 220px;
-      z-index: 75;
+    .process-dropdown-link,
+    .products-dropdown-link {
+      pointer-events: auto;
     }
 
     .process-menu-wrap:hover .process-dropdown,
-    .dropdown-hover-zone:hover + .process-dropdown,
     .process-dropdown:hover {
       display: block;
     }
@@ -99,13 +105,6 @@
       transform: translateX(-510px);
     }
 
-    .story-menu-wrap .dropdown-hover-zone {
-      left: 0;
-      top: 0;
-      width: 140px;
-      height: 50px;
-      transform: translateX(-90px) translateY(6px);
-    }
 
     .story-menu-wrap .process-dropdown {
       left: 0;
@@ -142,17 +141,11 @@
       transform: translateX(-233px) translateY(4px);
     }
 
-    .products-menu-wrap .dropdown-hover-zone {
-      left: 0;
-      top: 0;
-      width: 140px;
-      height: 50px;
-      transform: translateX(-78px) translateY(26px);
-    }
 
     .products-menu-wrap .process-dropdown {
       left: 0;
       top: 0;
+      height: 200px;
       transform: translateX(-78px) translateY(26px);
     }
 
@@ -191,13 +184,6 @@
       transform: none;
     }
 
-    .main-process-menu-wrap .dropdown-hover-zone {
-      left: 0;
-      top: 0;
-      width: 140px;
-      height: 50px;
-      transform: translateX(-70px) translateY(6px);
-    }
 
     .main-process-menu-wrap .process-dropdown {
       left: 0;
@@ -267,27 +253,19 @@
       }
 
       .process-dropdown {
-        width: 170px;
+        width: 120px;
+        height: 140px;
         max-width: none;
         min-width: 0;
       }
 
-      .dropdown-hover-zone {
-        width: 120px;
-        height: 140px;
+      .dropdown-visual {
+        width: 170px;
       }
 
       .story-menu-wrap {
         left: 53.5%;
         transform: translateX(-106px);
-      }
-
-      .story-menu-wrap .dropdown-hover-zone {
-        left: 0;
-        top: 0;
-        width: 120px;
-        height: 140px;
-        transform: translateX(-109px) translateY(10px);
       }
 
       .story-menu-wrap .process-dropdown {
@@ -313,14 +291,6 @@
       .products-menu-wrap {
         left: 53.5%;
         transform: translateX(-50px) translateY(1px);
-      }
-
-      .products-menu-wrap .dropdown-hover-zone {
-        left: 0;
-        top: 0;
-        width: 120px;
-        height: 140px;
-        transform: translateX(-80px) translateY(10px);
       }
 
       .products-menu-wrap .process-dropdown {
@@ -355,14 +325,6 @@
         transform: none;
       }
 
-      .main-process-menu-wrap .dropdown-hover-zone {
-        left: 0;
-        top: 0;
-        width: 120px;
-        height: 140px;
-        transform: translateX(-109px) translateY(10px);
-      }
-
       .main-process-menu-wrap .process-dropdown {
         left: 0;
         top: 0;
@@ -389,27 +351,19 @@
        ========================================================= */
     @media (max-height: 500px) and (orientation: landscape) {
       .process-dropdown {
-        width: 260px;
+        width: 210px;
+        height: 220px;
         max-width: none;
         min-width: 0;
       }
 
-      .dropdown-hover-zone {
-        width: 210px;
-        height: 220px;
+      .dropdown-visual {
+        width: 260px;
       }
 
       .story-menu-wrap {
         left: 54.8%;
         transform: translateX(-220px);
-      }
-
-      .story-menu-wrap .dropdown-hover-zone {
-        left: 0;
-        top: 0;
-        width: 210px;
-        height: 220px;
-        transform: translateX(-182px) translateY(12px);
       }
 
       .story-menu-wrap .process-dropdown {
@@ -435,14 +389,6 @@
       .products-menu-wrap {
         left: 54.8%;
         transform: translateX(-105px) translateY(5px);
-      }
-
-      .products-menu-wrap .dropdown-hover-zone {
-        left: 0;
-        top: 0;
-        width: 210px;
-        height: 220px;
-        transform: translateX(-109px) translateY(15px);
       }
 
       .products-menu-wrap .process-dropdown {
@@ -477,14 +423,6 @@
         transform: none;
       }
 
-      .main-process-menu-wrap .dropdown-hover-zone {
-        left: 0;
-        top: 0;
-        width: 210px;
-        height: 220px;
-        transform: translateX(-182px) translateY(12px);
-      }
-
       .main-process-menu-wrap .process-dropdown {
         left: 0;
         top: 0;
@@ -512,8 +450,7 @@
     .anchor-target,
     .process-menu-wrap,
     .process-dropdown-link,
-    .products-dropdown-link,
-    .dropdown-hover-zone {
+    .products-dropdown-link {
       outline: 2px solid rgba(255, 0, 0, 0.9) !important;
       background: rgba(255, 0, 0, 0.22) !important;
     }
@@ -554,11 +491,6 @@
       background: rgba(0, 255, 255, 0.28) !important;
     }
 
-    .dropdown-hover-zone {
-      outline: 2px dashed rgba(0, 180, 255, 0.95) !important;
-      background: rgba(0, 180, 255, 0.14) !important;
-    }
-
     .process-dropdown {
       outline: 2px dashed rgba(0, 0, 255, 0.9) !important;
       background: rgba(0, 0, 255, 0.08) !important;
@@ -586,40 +518,40 @@
       <div class="process-menu-wrap story-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Our Story menu"></a>
 
-        <div class="dropdown-hover-zone" aria-hidden="true"></div>
-
         <div class="process-dropdown">
-          <img src="Our-Story-menu-001.png?v=2" alt="Our Story dropdown menu" class="process-dropdown-image"/>
+          <div class="dropdown-visual">
+            <img src="Our-Story-menu-001.png?v=2" alt="Our Story dropdown menu" class="process-dropdown-image"/>
 
-          <a href="our-story.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Story page"></a>
-          <a href="why-wheat.html" class="process-dropdown-link process-care-link" aria-label="Go to Why Whole Wheat page"></a>
+            <a href="our-story.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Story page"></a>
+            <a href="why-wheat.html" class="process-dropdown-link process-care-link" aria-label="Go to Why Whole Wheat page"></a>
+          </div>
         </div>
       </div>
 
       <div class="process-menu-wrap products-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Products menu"></a>
 
-        <div class="dropdown-hover-zone" aria-hidden="true"></div>
-
         <div class="process-dropdown">
-          <img src="Products-menu.png?v=2" alt="Products dropdown menu" class="process-dropdown-image"/>
+          <div class="dropdown-visual">
+            <img src="Products-menu.png?v=2" alt="Products dropdown menu" class="process-dropdown-image"/>
 
-          <a href="shop-wheat.html" class="products-dropdown-link products-wheat-link" aria-label="Go to Shop Wheat page"></a>
-          <a href="shop-flour.html" class="products-dropdown-link products-flour-link" aria-label="Go to Shop Flour page"></a>
-          <a href="shop-baked-goods.html" class="products-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
+            <a href="shop-wheat.html" class="products-dropdown-link products-wheat-link" aria-label="Go to Shop Wheat page"></a>
+            <a href="shop-flour.html" class="products-dropdown-link products-flour-link" aria-label="Go to Shop Flour page"></a>
+            <a href="shop-baked-goods.html" class="products-dropdown-link products-baked-link" aria-label="Go to Shop Baked Goods page"></a>
+          </div>
         </div>
       </div>
 
       <div class="process-menu-wrap main-process-menu-wrap">
         <a href="#" class="hotspot process-nav" aria-label="Open Process menu"></a>
 
-        <div class="dropdown-hover-zone" aria-hidden="true"></div>
-
         <div class="process-dropdown">
-          <img src="Process-Dropdown-001.png" alt="Process dropdown menu" class="process-dropdown-image"/>
+          <div class="dropdown-visual">
+            <img src="Process-Dropdown-001.png" alt="Process dropdown menu" class="process-dropdown-image"/>
 
-          <a href="our-method.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Method page"></a>
-          <a href="care.html" class="process-dropdown-link process-care-link" aria-label="Go to Care page"></a>
+            <a href="our-method.html" class="process-dropdown-link process-method-link" aria-label="Go to Our Method page"></a>
+            <a href="care.html" class="process-dropdown-link process-care-link" aria-label="Go to Care page"></a>
+          </div>
         </div>
       </div>
 
