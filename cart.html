@@ -243,6 +243,9 @@
       <input type="hidden" name="accessKey" value="sf_89c447b418c7e6e6283f4104">
       <input type="hidden" name="subject" value="New Bread of Life Mills Order Request">
       <input type="hidden" name="redirectTo" value="https://breadoflifemills.com/thank-you.html">
+      <input id="order-number-field" name="orderNumber" type="hidden">
+      <input id="order-summary-field" name="orderSummary" type="hidden">
+      <input id="receipt-field" name="receipt" type="hidden">
 
       <div class="form-field">
         <label for="customer-name">Name *</label>
@@ -276,8 +279,6 @@
         <textarea id="customer-notes" name="notes"></textarea>
       </div>
 
-      <input id="order-summary-field" name="orderSummary" type="hidden">
-
       <div class="cart-actions">
         <button type="submit" class="cart-button">Complete Order Request</button>
       </div>
@@ -295,7 +296,9 @@
     const cartTotalsContainer = document.getElementById('cart-totals');
     const clearCartButton = document.getElementById('clear-cart-button');
     const orderForm = document.getElementById('order-request-form');
+    const orderNumberField = document.getElementById('order-number-field');
     const orderSummaryField = document.getElementById('order-summary-field');
+    const receiptField = document.getElementById('receipt-field');
     const orderSummaryPreview = document.getElementById('order-summary-preview');
     const formMessage = document.getElementById('form-message');
 
@@ -328,6 +331,61 @@
       };
     }
 
+    function generateOrderNumber() {
+      const now = new Date();
+      const year = String(now.getFullYear());
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const randomPart = Math.floor(1000 + Math.random() * 9000);
+
+      return 'BOLM-' + year + month + day + '-' + hours + minutes + seconds + '-' + randomPart;
+    }
+
+    function getCustomerData() {
+      return {
+        name: document.getElementById('customer-name').value.trim(),
+        phone: document.getElementById('customer-phone').value.trim(),
+        email: document.getElementById('customer-email').value.trim(),
+        pickupLocation: document.getElementById('pickup-location').value,
+        notes: document.getElementById('customer-notes').value.trim()
+      };
+    }
+
+    function buildReceiptText(orderNumber, cart, totals, customerData) {
+      let receipt = 'Bread of Life Mills Order Request Receipt\n';
+      receipt += 'Order Number: ' + orderNumber + '\n';
+      receipt += 'Submitted: ' + new Date().toLocaleString() + '\n\n';
+
+      receipt += 'Customer Information\n';
+      receipt += 'Name: ' + customerData.name + '\n';
+      receipt += 'Phone: ' + customerData.phone + '\n';
+      receipt += 'Email: ' + customerData.email + '\n';
+      receipt += 'Preferred Pickup Location: ' + customerData.pickupLocation + '\n';
+      receipt += 'Notes / Questions: ' + (customerData.notes || 'None') + '\n\n';
+
+      receipt += 'Order Items\n';
+
+      cart.forEach(function (item) {
+        const itemSubtotal = item.price * item.quantity;
+
+        receipt += item.name + '\n';
+        receipt += 'Size / Type: ' + item.size + '\n';
+        receipt += 'Quantity: ' + item.quantity + '\n';
+        receipt += 'Price Each: ' + formatCurrency(item.price) + '\n';
+        receipt += 'Item Subtotal: ' + formatCurrency(itemSubtotal) + '\n\n';
+      });
+
+      receipt += 'Subtotal: ' + formatCurrency(totals.subtotal) + '\n';
+      receipt += 'Sales Tax: ' + formatCurrency(totals.salesTax) + '\n';
+      receipt += 'Total: ' + formatCurrency(totals.total) + '\n\n';
+      receipt += 'This is an order request receipt, not a paid invoice. Bread of Life Mills will contact you to confirm availability, pickup details, and payment.';
+
+      return receipt;
+    }
+
     function buildOrderSummary() {
       const cart = getCart();
       const totals = calculateCartTotals(cart);
@@ -338,7 +396,7 @@
         const itemSubtotal = item.price * item.quantity;
 
         summary += item.name + '\n';
-        summary += 'Size: ' + item.size + '\n';
+        summary += 'Size / Type: ' + item.size + '\n';
         summary += 'Quantity: ' + item.quantity + '\n';
         summary += 'Price Each: ' + formatCurrency(item.price) + '\n';
         summary += 'Item Subtotal: ' + formatCurrency(itemSubtotal) + '\n\n';
@@ -389,7 +447,7 @@
         itemTitle.textContent = item.name;
 
         const itemSize = document.createElement('p');
-        itemSize.textContent = 'Size: ' + item.size;
+        itemSize.textContent = 'Size / Type: ' + item.size;
 
         const itemQuantity = document.createElement('p');
         itemQuantity.textContent = 'Quantity: ' + item.quantity;
@@ -442,10 +500,29 @@
         return;
       }
 
-      const orderSummary = buildOrderSummary();
+      const orderNumber = generateOrderNumber();
+      const totals = calculateCartTotals(cart);
+      const customerData = getCustomerData();
+      const receiptText = buildReceiptText(orderNumber, cart, totals, customerData);
 
-      orderSummaryField.value = orderSummary;
-      orderSummaryPreview.textContent = orderSummary;
+      const receiptData = {
+        orderNumber: orderNumber,
+        submittedAt: new Date().toLocaleString(),
+        customer: customerData,
+        items: cart,
+        subtotal: totals.subtotal,
+        salesTax: totals.salesTax,
+        total: totals.total,
+        receiptText: receiptText
+      };
+
+      sessionStorage.setItem('breadOfLifeLastReceipt', JSON.stringify(receiptData));
+
+      orderNumberField.value = orderNumber;
+      orderSummaryField.value = buildOrderSummary();
+      receiptField.value = receiptText;
+
+      orderSummaryPreview.textContent = receiptText;
       orderSummaryPreview.style.display = 'block';
 
       formMessage.textContent = 'Submitting your order request...';
