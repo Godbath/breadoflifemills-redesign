@@ -7,137 +7,410 @@
   <link rel="icon" href="favicon.ico?v=4" sizes="any">
   <link rel="icon" type="image/png" sizes="512x512" href="breadoflifemills-favicon-b.png?v=4">
   <link rel="apple-touch-icon" href="breadoflifemills-favicon-b.png?v=4">
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 
   <style>
-    /* Page-specific dropdown alignment controls.
-       These rules load after styles.css and intentionally override the shared defaults. */
+    /* =========================================================
+       HOMEPAGE-ONLY POSITIONING CONTROLS
+       These rules intentionally override styles.css for index.html.
+       Adjust these values here instead of changing global CSS.
+       ========================================================= */
 
+    /* ---------- Top navigation / page targets ---------- */
+    .top-contact {
+      left: 81.5%;
+      top: 0.3%;
+      width: 10.5%;
+      height: 1.6%;
+    }
+
+    .hero-explore-story {
+      left: 10.3%;
+      top: 19.6%;
+      width: 31%;
+      height: 2.5%;
+    }
+
+    .contact-target {
+      left: 0;
+      top: 87.5%;
+      width: 100%;
+      height: 8%;
+    }
+
+    .email-link {
+      left: 34%;
+      top: 97.6%;
+      width: 33%;
+      height: 1.2%;
+    }
+
+    /* ---------- Shared homepage menu base ---------- */
+    .process-menu-wrap {
+      position: absolute;
+      top: 0.3%;
+      width: 10.5%;
+      height: 1.6%;
+      z-index: 50;
+    }
+
+    .process-nav {
+      position: absolute;
+      inset: 0;
+      display: block;
+      z-index: 60;
+    }
+
+    .process-dropdown {
+      position: absolute;
+      display: none;
+      width: 340px;
+      max-width: none;
+      min-width: 0;
+      z-index: 70;
+    }
+
+    .process-dropdown-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .process-menu-wrap:hover .process-dropdown,
+    .process-dropdown:hover {
+      display: block;
+    }
+
+    /* ---------- Our Story menu trigger and dropdown image ---------- */
     .story-menu-wrap {
+      left: 54.8%;
       transform: translateX(-400px);
     }
 
+    .story-menu-wrap .process-dropdown {
+      left: 0;
+      top: 0;
+      transform: translateX(-270px) translateY(6px);
+    }
+
+    /* Our Story dropdown internal targets */
+    .story-menu-wrap .process-method-link {
+      position: absolute;
+      left: 116px;
+      top: 184px;
+      width: 109px;
+      height: 34px;
+      display: block;
+      z-index: 80;
+      transform: none;
+    }
+
+    .story-menu-wrap .process-care-link {
+      position: absolute;
+      left: 116px;
+      top: 235px;
+      width: 109px;
+      height: 37px;
+      display: block;
+      z-index: 80;
+      transform: none;
+    }
+
+    /* ---------- Products menu trigger and dropdown image ---------- */
     .products-menu-wrap {
+      left: 54.8%;
       transform: translateX(-183px) translateY(4px);
     }
 
     .products-menu-wrap .process-dropdown {
+      left: 0;
+      top: 0;
       transform: translateX(-128px) translateY(26px);
     }
 
-    /* Independent correction for the Our Story dropdown image. */
-    .story-menu-wrap .process-dropdown {
-      transform: translateX(calc(-50% - 100px));
-    }
-
-    /* Independent correction for the Process dropdown image. */
-    .main-process-menu-wrap .process-dropdown {
-      transform: translateX(calc(-50% - 100px));
-    }
-
-    /* Products dropdown targets are now positioned with explicit top values
-       instead of relying on transform-only offsets. */
+    /* Products dropdown internal targets */
     .products-menu-wrap .products-dropdown-link {
       position: absolute;
-      left: 34%;
-      width: 32%;
-      height: 10%;
       display: block;
       z-index: 80;
       transform: none;
     }
 
     .products-wheat-link {
-      top: 44%;
+      left: 116px;
+      top: 150px;
+      width: 109px;
+      height: 34px;
     }
 
     .products-flour-link {
-      top: 57%;
+      left: 116px;
+      top: 194px;
+      width: 109px;
+      height: 34px;
     }
 
     .products-baked-link {
-      top: 70%;
+      left: 116px;
+      top: 238px;
+      width: 109px;
+      height: 34px;
     }
 
+    /* ---------- Process menu trigger and dropdown image ---------- */
+    .main-process-menu-wrap {
+      left: 54.8%;
+      transform: none;
+    }
+
+    .main-process-menu-wrap .process-dropdown {
+      left: 0;
+      top: 0;
+      transform: translateX(-270px) translateY(6px);
+    }
+
+    /* Process dropdown internal targets */
+    .main-process-menu-wrap .process-method-link {
+      position: absolute;
+      left: 116px;
+      top: 184px;
+      width: 109px;
+      height: 34px;
+      display: block;
+      z-index: 80;
+      transform: none;
+    }
+
+    .main-process-menu-wrap .process-care-link {
+      position: absolute;
+      left: 116px;
+      top: 235px;
+      width: 109px;
+      height: 37px;
+      display: block;
+      z-index: 80;
+      transform: none;
+    }
+
+    /* =========================================================
+       MOBILE HOMEPAGE-ONLY POSITIONING CONTROLS
+       ========================================================= */
     @media (max-width: 768px) {
+      .top-contact {
+        left: 81.5%;
+        top: 0.2%;
+        width: 12%;
+        height: 2.4%;
+      }
+
+      .hero-explore-story {
+        left: 9.5%;
+        top: 19.6%;
+        width: 32%;
+        height: 2.5%;
+      }
+
+      .contact-target {
+        left: 0;
+        top: 87.3%;
+        width: 100%;
+        height: 8.5%;
+      }
+
+      .email-link {
+        left: 34%;
+        top: 97.0%;
+        width: 33%;
+        height: 1.2%;
+      }
+
+      .process-menu-wrap {
+        top: 0.2%;
+        width: 13%;
+        height: 2.4%;
+      }
+
+      .process-dropdown {
+        width: 170px;
+        max-width: none;
+        min-width: 0;
+      }
+
       .story-menu-wrap {
+        left: 53.5%;
         transform: translateX(-106px);
       }
 
+      .story-menu-wrap .process-dropdown {
+        left: 0;
+        top: 0;
+        transform: translateX(-109px) translateY(10px);
+      }
+
+      .story-menu-wrap .process-method-link {
+        left: 58px;
+        top: 88px;
+        width: 54px;
+        height: 19px;
+      }
+
+      .story-menu-wrap .process-care-link {
+        left: 58px;
+        top: 117px;
+        width: 54px;
+        height: 19px;
+      }
+
       .products-menu-wrap {
+        left: 53.5%;
         transform: translateX(-50px) translateY(1px);
       }
 
       .products-menu-wrap .process-dropdown {
+        left: 0;
+        top: 0;
         transform: translateX(-80px) translateY(10px);
       }
 
-      .story-menu-wrap .process-dropdown {
-        transform: translateX(calc(-50% - 24px));
-      }
-
-      .main-process-menu-wrap .process-dropdown {
-        transform: translateX(calc(-50% - 24px));
-      }
-
-      .products-menu-wrap .products-dropdown-link {
-        left: 34%;
-        width: 32%;
-        height: 10%;
-        transform: none;
-      }
-
       .products-wheat-link {
-        top: 44%;
+        left: 58px;
+        top: 75px;
+        width: 54px;
+        height: 17px;
       }
 
       .products-flour-link {
-        top: 57%;
+        left: 58px;
+        top: 97px;
+        width: 54px;
+        height: 17px;
       }
 
       .products-baked-link {
-        top: 70%;
+        left: 58px;
+        top: 119px;
+        width: 54px;
+        height: 17px;
+      }
+
+      .main-process-menu-wrap {
+        left: 53.5%;
+        transform: none;
+      }
+
+      .main-process-menu-wrap .process-dropdown {
+        left: 0;
+        top: 0;
+        transform: translateX(-109px) translateY(10px);
+      }
+
+      .main-process-menu-wrap .process-method-link {
+        left: 58px;
+        top: 88px;
+        width: 54px;
+        height: 19px;
+      }
+
+      .main-process-menu-wrap .process-care-link {
+        left: 58px;
+        top: 117px;
+        width: 54px;
+        height: 19px;
       }
     }
 
+    /* =========================================================
+       LANDSCAPE MOBILE HOMEPAGE-ONLY POSITIONING CONTROLS
+       ========================================================= */
     @media (max-height: 500px) and (orientation: landscape) {
+      .process-dropdown {
+        width: 260px;
+        max-width: none;
+        min-width: 0;
+      }
+
       .story-menu-wrap {
+        left: 54.8%;
         transform: translateX(-220px);
       }
 
+      .story-menu-wrap .process-dropdown {
+        left: 0;
+        top: 0;
+        transform: translateX(-182px) translateY(12px);
+      }
+
+      .story-menu-wrap .process-method-link {
+        left: 88px;
+        top: 135px;
+        width: 83px;
+        height: 27px;
+      }
+
+      .story-menu-wrap .process-care-link {
+        left: 88px;
+        top: 179px;
+        width: 83px;
+        height: 29px;
+      }
+
       .products-menu-wrap {
+        left: 54.8%;
         transform: translateX(-105px) translateY(5px);
       }
 
       .products-menu-wrap .process-dropdown {
+        left: 0;
+        top: 0;
         transform: translateX(-109px) translateY(15px);
       }
 
-      .story-menu-wrap .process-dropdown {
-        transform: translateX(calc(-50% - 52px));
-      }
-
-      .main-process-menu-wrap .process-dropdown {
-        transform: translateX(calc(-50% - 52px));
-      }
-
-      .products-menu-wrap .products-dropdown-link {
-        left: 34%;
-        width: 32%;
-        height: 10%;
-        transform: none;
-      }
-
       .products-wheat-link {
-        top: 44%;
+        left: 88px;
+        top: 114px;
+        width: 83px;
+        height: 26px;
       }
 
       .products-flour-link {
-        top: 57%;
+        left: 88px;
+        top: 148px;
+        width: 83px;
+        height: 26px;
       }
 
       .products-baked-link {
-        top: 70%;
+        left: 88px;
+        top: 182px;
+        width: 83px;
+        height: 26px;
+      }
+
+      .main-process-menu-wrap {
+        left: 54.8%;
+        transform: none;
+      }
+
+      .main-process-menu-wrap .process-dropdown {
+        left: 0;
+        top: 0;
+        transform: translateX(-182px) translateY(12px);
+      }
+
+      .main-process-menu-wrap .process-method-link {
+        left: 88px;
+        top: 135px;
+        width: 83px;
+        height: 27px;
+      }
+
+      .main-process-menu-wrap .process-care-link {
+        left: 88px;
+        top: 179px;
+        width: 83px;
+        height: 29px;
       }
     }
 
