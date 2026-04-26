@@ -524,7 +524,100 @@
       }
     }
 
-    /* Debug visibility removed: homepage targets are invisible for live use. */
+
+    /* ---------- Floating shop navigation buttons copied from shop-baked-goods.html ---------- */
+    .floating-cart-button {
+      position: fixed;
+      top: 88px;
+      right: 23px;
+      z-index: 9999;
+      display: inline-block;
+      width: 180px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .floating-cart-button-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: 3px;
+      min-width: 25px;
+      height: 25px;
+      padding: 2px 5px;
+      box-sizing: border-box;
+      border-radius: 999px;
+      background: #5a3f2a;
+      color: #fff8dc;
+      border: 2px solid #fff8dc;
+      font-family: 'DejaVu Serif', serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 14px;
+      text-align: center;
+      display: none;
+    }
+
+    .floating-shop-link {
+      position: fixed;
+      right: 38px;
+      z-index: 9998;
+      display: inline-block;
+      width: 150px;
+      height: auto;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .floating-shop-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .floating-wheat-button {
+      top: 153px;
+    }
+
+    .floating-flour-button {
+      top: 231px;
+    }
+
+    @media (max-width: 768px) {
+      .floating-cart-button {
+        top: 38px;
+        right: 6px;
+        width: 72px;
+      }
+
+      .cart-count {
+        top: -4px;
+        right: 61px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 11px;
+        line-height: 13px;
+      }
+
+      .floating-shop-link {
+        right: 12px;
+        width: 60px;
+      }
+
+      .floating-wheat-button {
+        top: 66px;
+      }
+
+      .floating-flour-button {
+        top: 102px;
+      }
+    }
 
   </style>
 </head>
@@ -590,5 +683,43 @@
       <a href="mailto:breadoflifemills@gmail.com" class="hotspot email-link" aria-label="Email Bread of Life Mills"></a>
     </div>
   </main>
+
+  <a href="cart.html" class="floating-cart-button" aria-label="View cart">
+    <img src="cart-button.png?v=2" alt="Cart" class="floating-cart-button-image">
+    <span id="cart-count" class="cart-count">0</span>
+  </a>
+
+  <a href="shop-wheat.html" class="floating-shop-link floating-wheat-button" aria-label="Go to Shop Wheat">
+    <img src="wheat-button.png?v=2" alt="Shop Wheat">
+  </a>
+
+  <a href="shop-flour.html" class="floating-shop-link floating-flour-button" aria-label="Go to Shop Flour">
+    <img src="flour-button.png?v=2" alt="Shop Flour">
+  </a>
+
+  <script>
+    const cartCount = document.getElementById('cart-count');
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+
+      let totalItems = 0;
+
+      cart.forEach(function (item) {
+        totalItems += item.quantity;
+      });
+
+      cartCount.textContent = totalItems;
+
+      if (totalItems > 0) {
+        cartCount.style.display = 'block';
+      } else {
+        cartCount.style.display = 'none';
+      }
+    }
+
+    updateCartCount();
+  </script>
+
 </body>
 </html>
