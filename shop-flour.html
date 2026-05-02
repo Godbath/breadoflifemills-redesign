@@ -343,89 +343,63 @@
     <div class="product-grid">
 
       <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Heritage Blend Flour">
+        <img src="hard-red-spring-wheat.jpg" alt="North American Heritage Flour">
         <h2>North American Heritage</h2>
-        <p class="price">5 lb: $16.00 | 10 lb: $28.00</p>
+        <p class="price">5 lb: $17.45 | 10 lb: $29.70</p>
         <p class="description">Our classic go-to blend for traditional sourdough, combining Hard Red, White Sonoran, and Rouge Bordeaux for strength, flavor, and beautiful fermentation.</p>
 
         <div class="product-option-control">
-          <label for="heritage-blend-size">Size:</label>
-          <select id="heritage-blend-size">
-            <option value="5 lb bag" data-price="16.00">5 lb bag - $16.00</option>
-            <option value="10 lb bag" data-price="28.00">10 lb bag - $28.00</option>
+          <label for="north-american-heritage-flour-size">Size:</label>
+          <select id="north-american-heritage-flour-size" class="product-size-select">
+            <option value="5 lb bag" data-price="17.45">5 lb bag - $17.45</option>
+            <option value="10 lb bag" data-price="29.70">10 lb bag - $29.70</option>
           </select>
         </div>
 
         <div class="quantity-control">
-          <label for="heritage-blend-quantity">Qty:</label>
-          <input id="heritage-blend-quantity" type="number" min="1" value="1">
+          <label for="north-american-heritage-flour-quantity">Qty:</label>
+          <input id="north-american-heritage-flour-quantity" class="product-quantity-input" type="number" min="1" value="1">
         </div>
 
         <button
           class="add-to-cart-button"
-          data-product-id="heritage-blend-flour"
-          data-product-name="Heritage Blend Flour"
+          data-product-id="north-american-heritage-flour"
+          data-product-name="North American Heritage Flour"
         >
           Add to Cart
         </button>
 
-        <p id="heritage-blend-cart-message" class="add-to-cart-message" aria-live="polite"></p>
+        <p id="north-american-heritage-flour-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
       <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Kamut Wheat">
+        <img src="hard-red-spring-wheat.jpg" alt="Padre Kino Blend Flour">
         <h2>Padre Kino Blend</h2>
-        <p class="price">$0.00</p>
+        <p class="price">5 lb: $19.60 | 10 lb: $33.30</p>
         <p class="description">An ancient grain with a rich golden color, buttery flavor, and satisfying depth.</p>
-      </div>
 
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="White Sonoran Wheat">
-        <h2>Terra Santa Ciabatta</h2>
-        <p class="price">$0.00</p>
-        <p class="description">A heritage Arizona wheat known for its mild flavor, soft texture, and beautiful versatility.</p>
-      </div>
+        <div class="product-option-control">
+          <label for="padre-kino-blend-flour-size">Size:</label>
+          <select id="padre-kino-blend-flour-size" class="product-size-select">
+            <option value="5 lb bag" data-price="19.60">5 lb bag - $19.60</option>
+            <option value="10 lb bag" data-price="33.30">10 lb bag - $33.30</option>
+          </select>
+        </div>
 
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Spelt Wheat">
-        <h2>San Pedro Pizza Blend</h2>
-        <p class="price">$0.00</p>
-        <p class="description">A traditional grain with a lightly sweet, nutty character and tender baking qualities.</p>
-      </div>
+        <div class="quantity-control">
+          <label for="padre-kino-blend-flour-quantity">Qty:</label>
+          <input id="padre-kino-blend-flour-quantity" class="product-quantity-input" type="number" min="1" value="1">
+        </div>
 
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Emmer Wheat">
-        <h2>Emmer</h2>
-        <p class="price">$0.00</p>
-        <p class="description">An ancient wheat with earthy flavor, rustic character, and deep old-world appeal.</p>
-      </div>
+        <button
+          class="add-to-cart-button"
+          data-product-id="padre-kino-blend-flour"
+          data-product-name="Padre Kino Blend Flour"
+        >
+          Add to Cart
+        </button>
 
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Heirloom Soft White Wheat">
-        <h2>Heirloom Soft White</h2>
-        <p class="price">$0.00</p>
-        <p class="description">A gentler wheat berry ideal for pastries, flatbreads, lighter loaves, and everyday baking.</p>
-      </div>
-
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Durum Wheat">
-        <h2>Durum</h2>
-        <p class="price">$0.00</p>
-        <p class="description">A hard golden wheat traditionally prized for pasta, rustic breads, and rich color.</p>
-      </div>
-
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Einkorn Wheat">
-        <h2>Einkorn</h2>
-        <p class="price">$0.00</p>
-        <p class="description">One of the oldest cultivated wheats, with a delicate flavor and naturally distinct character.</p>
-      </div>
-
-      <div class="product-card">
-        <img src="hard-red-spring-wheat.jpg" alt="Rouge Bordeaux Wheat">
-        <h2>Rouge Bordeaux</h2>
-        <p class="price">$0.00</p>
-        <p class="description">A flavorful heritage wheat with depth, warmth, and a beautiful rustic baking profile.</p>
+        <p id="padre-kino-blend-flour-cart-message" class="add-to-cart-message" aria-live="polite"></p>
       </div>
 
     </div>
@@ -449,10 +423,7 @@
   </a>
 
   <script>
-    const heritageBlendButton = document.querySelector('[data-product-id="heritage-blend-flour"]');
-    const heritageBlendSize = document.getElementById('heritage-blend-size');
-    const heritageBlendQuantity = document.getElementById('heritage-blend-quantity');
-    const heritageBlendMessage = document.getElementById('heritage-blend-cart-message');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
     const cartCount = document.getElementById('cart-count');
 
     function updateCartCount() {
@@ -473,46 +444,52 @@
       }
     }
 
-    heritageBlendButton.addEventListener('click', function () {
-      const selectedOption = heritageBlendSize.options[heritageBlendSize.selectedIndex];
+    addToCartButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const productCard = button.closest('.product-card');
+        const sizeSelect = productCard.querySelector('.product-size-select');
+        const quantityInput = productCard.querySelector('.product-quantity-input');
+        const message = productCard.querySelector('.add-to-cart-message');
+        const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
 
-      const productBaseId = heritageBlendButton.dataset.productId;
-      const productName = heritageBlendButton.dataset.productName;
-      const productSize = selectedOption.value;
-      const productPrice = parseFloat(selectedOption.dataset.price);
-      const quantity = parseInt(heritageBlendQuantity.value, 10);
+        const productBaseId = button.dataset.productId;
+        const productName = button.dataset.productName;
+        const productSize = selectedOption.value;
+        const productPrice = parseFloat(selectedOption.dataset.price);
+        const quantity = parseInt(quantityInput.value, 10);
 
-      if (!quantity || quantity < 1) {
-        heritageBlendMessage.textContent = 'Please select a quantity of at least 1.';
-        return;
-      }
+        if (!quantity || quantity < 1) {
+          message.textContent = 'Please select a quantity of at least 1.';
+          return;
+        }
 
-      const cartItemId = productBaseId + '-' + productSize.replace(/\s+/g, '-').toLowerCase();
+        const cartItemId = productBaseId + '-' + productSize.replace(/\s+/g, '-').toLowerCase();
 
-      const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
+        const cart = JSON.parse(localStorage.getItem('breadOfLifeCart')) || [];
 
-      const existingItem = cart.find(function (item) {
-        return item.id === cartItemId;
-      });
-
-      if (existingItem) {
-        existingItem.quantity += quantity;
-      } else {
-        cart.push({
-          id: cartItemId,
-          name: productName,
-          size: productSize,
-          price: productPrice,
-          quantity: quantity
+        const existingItem = cart.find(function (item) {
+          return item.id === cartItemId;
         });
-      }
 
-      localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
+        if (existingItem) {
+          existingItem.quantity += quantity;
+        } else {
+          cart.push({
+            id: cartItemId,
+            name: productName,
+            size: productSize,
+            price: productPrice,
+            quantity: quantity
+          });
+        }
 
-      heritageBlendMessage.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
-      heritageBlendQuantity.value = 1;
+        localStorage.setItem('breadOfLifeCart', JSON.stringify(cart));
 
-      updateCartCount();
+        message.textContent = quantity + ' x ' + productName + ' (' + productSize + ') added to cart.';
+        quantityInput.value = 1;
+
+        updateCartCount();
+      });
     });
 
     updateCartCount();
