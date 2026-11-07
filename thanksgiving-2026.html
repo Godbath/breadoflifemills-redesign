@@ -36,6 +36,10 @@ a:hover { color:#8a5e3a; }
 .promo strong { display:block; font-size:clamp(28px,4vw,38px); margin:7px 0; }
 .promo p { margin:8px 0; }
 .callout { border-left:4px solid #755337; padding:14px 20px; margin:28px 0; background:rgba(255,248,220,.55); }
+.video-section { margin: 24px 0 42px; text-align:center; }
+.video-section h3 { margin: 0 0 15px; }
+.video-frame { width:100%; aspect-ratio:16 / 9; border:2px solid #755337; box-sizing:border-box; background:#251b13; }
+.video-caption { font-size:15px; line-height:1.5; margin:12px 0 0; }
 footer { margin-top:50px; text-align:center; font-size:14px; line-height:1.8; }
 footer p { font-size:15px; }
 /* Home button uses the same image and CSS class as the baked-goods page. */
@@ -61,7 +65,17 @@ footer p { font-size:15px; }
     <p>We want to extend our sincere gratitude to the Sierra Vista Farmers Market for welcoming us and providing local producers like ourselves with an opportunity to share the fruits of our labor with the community. We're equally grateful to everyone who stopped by our booth, asked questions, sampled our products, and shared their enthusiasm for what we're doing.</p>
     <p>That enthusiasm means more to us than you might realize. It's the encouragement and genuine interest of people like you that continually renew our passion for bringing wholesome, freshly milled grains and traditionally fermented sourdough bread back to our tables.</p>
     <p>We'd also like to extend a special thank you to <strong>CoolFM</strong> for stopping by and giving us an opportunity to introduce Bread of Life Mills and share a little about our products with their audience!</p>
-    <!-- WHEN READY: Add the CoolFM YouTube video URL or embed here, after securing reuse permission. -->
+    <section class="video-section" aria-label="CoolFM video interview">
+      <h3>Watch Our CoolFM Interview</h3>
+      <iframe class="video-frame"
+        src="https://www.youtube-nocookie.com/embed/zwyO01Bq0Ig?start=635"
+        title="Bread of Life Mills interview with CoolFM at the Sierra Vista Farmers Market"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <p class="video-caption">The video begins at our interview (10:35). If it doesn't play here, <a href="https://youtu.be/zwyO01Bq0Ig?t=635" target="_blank" rel="noopener noreferrer">watch it directly on YouTube</a>.</p>
+    </section>
 
     <h2>Our First Thanksgiving: A Special Holiday Thank You!</h2>
     <p>It's hard to believe that Bread of Life Mills was born just ten months ago, and here we are, preparing to celebrate our very first Thanksgiving as a family business!</p>
